@@ -6,12 +6,15 @@ import json
 import uuid
 from openai import OpenAI
 from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 app = Flask(__name__)
 
-account_sid = 'REMOVED_TWILIO_SID'
-auth_token = '4e09d53cfd6e4e53ff54a7c5be8a7ce1'
+account_sid = os.getenv("ACCOUNT_SID")
+auth_token = os.getenv("AUTH_TOKEN")
 # client = Client(account_sid, auth_token)
 client = OpenAI()
 chat_log_file = "chat_log.json"
