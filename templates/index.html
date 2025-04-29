@@ -154,6 +154,39 @@
             background: rgba(229, 62, 62, 0.7);
         }
 
+        /* Quick Reply Styles */
+        .quick-replies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            padding-left: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-reply-btn {
+            background-color: #FEF2F2;
+            color: #E53E3E;
+            border: 1px solid #E53E3E;
+            border-radius: 18px;
+            padding: 6px 14px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        
+        .quick-reply-btn:hover {
+            background-color: #E53E3E;
+            color: white;
+            transform: translateY(-2px);
+        }
+
         /* Mobile optimization */
         @media (max-width: 640px) {
             .app-container {
@@ -162,6 +195,14 @@
             }
             .chat-container {
                 height: 65vh;
+            }
+            .quick-replies-container {
+                padding-left: 8px;
+            }
+            
+            .quick-reply-btn {
+                padding: 4px 10px;
+                font-size: 12px;
             }
         }
     </style>
@@ -186,6 +227,14 @@
                     <i class="fas fa-utensils mr-1"></i> Tokyo Dining Expert
                 </span>
             </div>
+            <div class="hidden md:flex items-center">
+                <span class="bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium mr-3">
+                    <i class="fas fa-utensils mr-1"></i> Tokyo Dining Expert
+                </span>
+                <button id="clearChatBtn" class="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full font-medium transition">
+                    <i class="fas fa-trash-alt mr-1"></i> Clear Chat
+                </button>
+            </div>
         </header>
 
         <!-- Main content -->
@@ -195,6 +244,13 @@
                 <!-- Welcome message -->
                 <div class="bot-message p-4 mb-4 ml-2">
                     <p class="text-gray-800">Welcome to Ninja.AI! I'm your personal guide to the best authentic Japanese restaurants in Tokyo. How can I help you discover your next unforgettable dining experience?</p>
+                </div>
+                <!-- Initial quick replies -->
+                <div id="initialQuickReplies" class="quick-replies-container">
+                    <button class="quick-reply-btn">I'm looking for sushi restaurants</button>
+                    <button class="quick-reply-btn">Tell me about ramen spots</button>
+                    <button class="quick-reply-btn">What's popular in Tokyo?</button>
+                    <button class="quick-reply-btn">Good places for first-time visitors?</button>
                 </div>
             </div>
 
@@ -243,6 +299,19 @@
             const chatMessages = document.getElementById('chatMessages');
             const userInput = document.getElementById('userInput');
             const sendButton = document.getElementById('sendButton');
+            const clearChatBtn = document.getElementById('clearChatBtn');
+            const initialQuickReplies = document.getElementById('initialQuickReplies');
+            
+            // Set up initial quick reply buttons
+            if (initialQuickReplies) {
+                const quickReplyButtons = initialQuickReplies.querySelectorAll('.quick-reply-btn');
+                quickReplyButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        userInput.value = button.textContent;
+                        handleUserMessage();
+                    });
+                });
+            }
             
             // Show typing indicator
             function showTypingIndicator() {
@@ -258,6 +327,52 @@
                 `;
                 chatMessages.appendChild(indicatorDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function clearChat() {
+                while (chatMessages.firstChild) {
+                    chatMessages.removeChild(chatMessages.firstChild);
+                }
+                const welcomeDiv = document.createElement('div');
+                welcomeDiv.className = 'bot-message p-4 mb-4 ml-2';
+                welcomeDiv.innerHTML = `<p class="text-gray-800">Welcome to Ninja.AI! I'm your personal guide to the best authentic Japanese restaurants in Tokyo. How can I help you discover your next unforgettable dining experience?</p>`;
+                chatMessages.appendChild(welcomeDiv);
+                
+                // Re-add initial quick replies
+                const initialRepliesDiv = document.createElement('div');
+                initialRepliesDiv.id = 'initialQuickReplies';
+                initialRepliesDiv.className = 'quick-replies-container';
+                initialRepliesDiv.innerHTML = `
+                    <button class="quick-reply-btn">I'm looking for sushi restaurants</button>
+                    <button class="quick-reply-btn">Tell me about ramen spots</button>
+                    <button class="quick-reply-btn">What's popular in Tokyo?</button>
+                    <button class="quick-reply-btn">Good places for first-time visitors?</button>
+                `;
+                chatMessages.appendChild(initialRepliesDiv);
+                
+                // Re-attach event listeners to initial quick replies
+                const quickReplyButtons = initialRepliesDiv.querySelectorAll('.quick-reply-btn');
+                quickReplyButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        userInput.value = button.textContent;
+                        handleUserMessage();
+                    });
+                });
+                
+                fetch('/clear', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('chat history cleared:', data);
+                })
+                .catch(error => {
+                    console.error('Error clearing chat history:', error);
+                });
             }
             
             // Remove typing indicator
@@ -282,11 +397,70 @@
                 messageDiv.innerHTML = `<p class="${isUser ? 'text-white' : 'text-gray-800'}">${messageText}</p>`;
                 chatMessages.appendChild(messageDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return messageDiv;
+            }
+
+            // Function to display quick replies
+            function displayQuickReplies(quickReplies, afterElement = null) {
+                // Remove any existing quick replies
+                removeAllQuickReplies();
+                
+                // Create a new container
+                const container = document.createElement('div');
+                container.className = 'quick-replies-container';
+                
+                // Create buttons for each quick reply
+                quickReplies.forEach(reply => {
+                    const button = document.createElement('button');
+                    button.className = 'quick-reply-btn';
+                    button.textContent = reply;
+                    button.addEventListener('click', function() {
+                        // Set the input value to the quick reply text
+                        userInput.value = reply;
+                        
+                        // Trigger send
+                        handleUserMessage();
+                    });
+                    
+                    container.appendChild(button);
+                });
+                
+                // If we have a specific element to attach after, use that
+                if (afterElement && afterElement.parentNode) {
+                    afterElement.parentNode.insertBefore(container, afterElement.nextSibling);
+                } else {
+                    // Otherwise append to the chat container
+                    chatMessages.appendChild(container);
+                }
+                
+                // Scroll to the bottom to show quick replies
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                return container;
+            }
+
+            // Function to remove all quick reply containers
+            function removeAllQuickReplies() {
+                const containers = chatMessages.querySelectorAll('.quick-replies-container');
+                containers.forEach(container => {
+                    if (container.id !== 'initialQuickReplies') {
+                        container.remove();
+                    }
+                });
             }
 
             function handleUserMessage() {
                 const message = userInput.value.trim();
                 if (message === '') return;
+
+                // Remove initial quick replies when user sends first message
+                if (initialQuickReplies && initialQuickReplies.parentNode) {
+                    initialQuickReplies.remove();
+                }
+
+                // Remove any existing quick replies
+                removeAllQuickReplies();
 
                 // Add user message to chat
                 addMessage(message, true);
@@ -309,7 +483,7 @@
                     removeTypingIndicator();
                     
                     // Add bot response
-                    addMessage(data.response, false);
+                    const botMessageElement = addMessage(data.response, false);
                     
                     // If there's an image in the response
                     if (data.image_url) {
@@ -320,10 +494,27 @@
                             <p class="text-xs text-gray-500 mt-2">Restaurant image reference</p>
                         `;
                         chatMessages.appendChild(imageDiv);
-                        chatMessages.scrollTop = chatMessages.scrollHeight;
                     }
+                    
+                    // Always display quick replies after every bot message
+                    if (data.quickReplies && data.quickReplies.length > 0) {
+                        displayQuickReplies(data.quickReplies, botMessageElement);
+                    } else {
+                        // If no quick replies from server, use fallbacks
+                        const fallbackReplies = [
+                            "Tell me more",
+                            "What's the price range?",
+                            "Any other recommendations?",
+                            "How's the atmosphere?"
+                        ];
+                        displayQuickReplies(fallbackReplies, botMessageElement);
+                    }
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
                 })
                 .catch(error => {
+                    console.error('Error:', error);
                     // Remove typing indicator
                     removeTypingIndicator();
                     
@@ -338,11 +529,21 @@
                     } else {
                         botResponse = "I'd be happy to recommend some great Japanese restaurants. To help narrow down options, could you share what type of cuisine you're most interested in? For example: sushi, ramen, yakitori, kaiseki, etc.";
                     }
-                    addMessage(botResponse, false);
+                    const botMessageElement = addMessage(botResponse, false);
+                    
+                    // Add fallback quick replies after every bot message, even in error case
+                    const fallbackReplies = [
+                        "I'm looking for sushi",
+                        "Tell me about ramen",
+                        "What's your favorite restaurant?",
+                        "I have a budget of $50"
+                    ];
+                    displayQuickReplies(fallbackReplies, botMessageElement);
                 });
             }
 
             // Event listeners
+            clearChatBtn.addEventListener('click', clearChat);
             sendButton.addEventListener('click', handleUserMessage);
             userInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {

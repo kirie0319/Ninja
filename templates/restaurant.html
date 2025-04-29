@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotpepper Restaurant Search</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #d62c1f;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            margin: 0;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .search-panel {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .search-panel h2 {
+            margin-top: 0;
+            color: #d62c1f;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .search-form-section {
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #d62c1f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #b5251a;
+        }
+        .results-panel {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .results-panel h2 {
+            margin-top: 0;
+            color: #d62c1f;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .results-info {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        .restaurant-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .restaurant-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+        }
+        .restaurant-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .restaurant-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .restaurant-details {
+            padding: 15px;
+        }
+        .restaurant-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            color: #d62c1f;
+        }
+        .restaurant-info {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .restaurant-info strong {
+            font-weight: 600;
+        }
+        .restaurant-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #d62c1f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .restaurant-link:hover {
+            text-decoration: underline;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+        .loading img {
+            width: 50px;
+            height: 50px;
+        }
+        .error-message {
+            background-color: #ffe6e6;
+            color: #d62c1f;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-style: italic;
+            display: none;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        footer a {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+            .restaurant-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotpepper Restaurant Search</h1>
+    </header>
+    
+    <div class="container">
+        <div class="search-panel">
+            <h2>Search Restaurants</h2>
+            
+            <div class="search-form">
+                <div class="search-form-section">
+                    <h3>Search by Keywords & Area</h3>
+                    <div class="form-group">
+                        <label for="keyword">Keyword (Restaurant name, cuisine type, etc.)</label>
+                        <input type="text" id="keyword" placeholder="e.g., sushi, italian, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="area">Area</label>
+                        <select id="area">
+                            <option value="">-- Select an area --</option>
+                            <!-- Will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="count">Number of results</label>
+                        <select id="count">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                    
+                    <button type="button" id="search-button">Search Restaurants</button>
+                </div>
+                
+                <div class="search-form-section">
+                    <h3>Search by Location</h3>
+                    <div class="form-group">
+                        <label for="latitude">Latitude</label>
+                        <input type="number" id="latitude" step="0.000001" placeholder="e.g., 35.6812">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="longitude">Longitude</label>
+                        <input type="number" id="longitude" step="0.000001" placeholder="e.g., 139.7671">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="range">Search radius</label>
+                        <select id="range">
+                            <option value="1">300m</option>
+                            <option value="2">500m</option>
+                            <option value="3" selected>1000m</option>
+                            <option value="4">2000m</option>
+                            <option value="5">3000m</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location-keyword">Keyword (optional)</label>
+                        <input type="text" id="location-keyword" placeholder="e.g., ramen, café, etc.">
+                    </div>
+                    
+                    <button type="button" id="location-search-button">Search by Location</button>
+                    <button type="button" id="use-current-location" style="margin-top: 10px; background-color: #666;">Use My Current Location</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q2MmMxZiIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtZGFzaGFycmF5PSI2MCwxNTAiPjxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgZnJvbT0iMCAyNSAyNSIgdG89IjM2MCAyNSAyNSI+PC9hbmltYXRlVHJhbnNmb3JtPjwvY2lyY2xlPjwvc3ZnPg==" alt="Loading...">
+            <p>Searching for restaurants...</p>
+        </div>
+        
+        <div class="error-message" id="error-message">
+            An error occurred while fetching restaurant data. Please try again.
+        </div>
+        
+        <div class="results-panel" id="results-panel" style="display: none;">
+            <h2>Search Results</h2>
+            
+            <div class="results-info" id="results-info">
+                Found 0 restaurants.
+            </div>
+            
+            <div class="no-results" id="no-results">
+                No restaurants found matching your search criteria.
+            </div>
+            
+            <div class="restaurant-list" id="restaurant-list">
+                <!-- Restaurant cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Powered by <a href="http://webservice.recruit.co.jp/" target="_blank">Hotpepper Gourmet Web Service</a></p>
+    </footer>
+    
+    <script>
+        // Base URL for API requests - update this to match your FastAPI server
+        const API_BASE_URL = 'http://localhost:8000';
+        
+        // Elements
+        const keywordInput = document.getElementById('keyword');
+        const areaSelect = document.getElementById('area');
+        const countSelect = document.getElementById('count');
+        const searchButton = document.getElementById('search-button');
+        
+        const latitudeInput = document.getElementById('latitude');
+        const longitudeInput = document.getElementById('longitude');
+        const rangeSelect = document.getElementById('range');
+        const locationKeywordInput = document.getElementById('location-keyword');
+        const locationSearchButton = document.getElementById('location-search-button');
+        const useCurrentLocationButton = document.getElementById('use-current-location');
+        
+        const loadingElement = document.querySelector('.loading');
+        const errorMessageElement = document.getElementById('error-message');
+        const resultsPanel = document.getElementById('results-panel');
+        const resultsInfo = document.getElementById('results-info');
+        const noResultsElement = document.getElementById('no-results');
+        const restaurantList = document.getElementById('restaurant-list');
+        
+        // Fetch large areas for the dropdown
+        async function fetchAreas() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/health-check`);
+                const data = await response.json();
+                
+                if (data.status === 'ok') {
+                    // Now fetch the actual areas
+                    // Note: This would typically be a separate endpoint in your API
+                    // For now, we'll add some example areas
+                    const areas = [
+                        { code: 'Z011', name: 'Tokyo' },
+                        { code: 'Z012', name: 'Kanagawa' },
+                        { code: 'Z013', name: 'Saitama' },
+                        { code: 'Z014', name: 'Chiba' },
+                        { code: 'Z021', name: 'Osaka' },
+                        { code: 'Z022', name: 'Kyoto' },
+                        { code: 'Z023', name: 'Hyogo' },
+                        { code: 'Z026', name: 'Nara' }
+                    ];
+                    
+                    // Populate the area dropdown
+                    areas.forEach(area => {
+                        const option = document.createElement('option');
+                        option.value = area.code;
+                        option.textContent = area.name;
+                        areaSelect.appendChild(option);
+                    });
+                } else {
+                    console.error('API key is not valid:', data);
+                    alert('API key is not valid. Please check your API key and try again.');
+                }
+            } catch (error) {
+                console.error('Error fetching areas:', error);
+            }
+        }
+        
+        // Search for restaurants by keyword and area
+        async function searchRestaurants() {
+            showLoading();
+            hideResults();
+            hideError();
+            
+            const keyword = keywordInput.value.trim();
+            const area = areaSelect.value;
+            const count = countSelect.value;
+            
+            if (!keyword && !area) {
+                hideLoading();
+                showError('Please enter a keyword or select an area.');
+                return;
+            }
+            
+            try {
+                const queryParams = new URLSearchParams();
+                if (keyword) queryParams.append('keyword', keyword);
+                if (area) queryParams.append('area', area);
+                queryParams.append('count', count);
+                
+                const response = await fetch(`${API_BASE_URL}/api/restaurants/search?${queryParams}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                displayResults(data);
+            } catch (error) {
+                console.error('Error searching restaurants:', error);
+                showError('Failed to fetch restaurant data. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Search for restaurants by location
+        async function searchRestaurantsByLocation() {
+            showLoading();
+            hideResults();
+            hideError();
+            
+            const latitude = latitudeInput.value.trim();
+            const longitude = longitudeInput.value.trim();
+            const range = rangeSelect.value;
+            const keyword = locationKeywordInput.value.trim();
+            const count = countSelect.value;
+            
+            if (!latitude || !longitude) {
+                hideLoading();
+                showError('Please enter both latitude and longitude.');
+                return;
+            }
+            
+            try {
+                const queryParams = new URLSearchParams();
+                queryParams.append('lat', latitude);
+                queryParams.append('lng', longitude);
+                queryParams.append('range', range);
+                if (keyword) queryParams.append('keyword', keyword);
+                queryParams.append('count', count);
+                
+                const response = await fetch(`${API_BASE_URL}/api/restaurants/location?${queryParams}`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                displayResults(data);
+            } catch (error) {
+                console.error('Error searching restaurants by location:', error);
+                showError('Failed to fetch restaurant data. Please try again.');
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        // Get current location
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                showLoading();
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        latitudeInput.value = position.coords.latitude;
+                        longitudeInput.value = position.coords.longitude;
+                        hideLoading();
+                    },
+                    (error) => {
+                        hideLoading();
+                        showError(`Error getting location: ${error.message}`);
+                    }
+                );
+            } else {
+                showError('Geolocation is not supported by your browser.');
+            }
+        }
+        
+        // Display search results
+        function displayResults(data) {
+            resultsPanel.style.display = 'block';
+            restaurantList.innerHTML = '';
+            
+            const totalResults = data.results_available;
+            const displayedResults = data.restaurants.length;
+            
+            resultsInfo.textContent = `Found ${totalResults} restaurants. Showing ${displayedResults} results.`;
+            
+            if (displayedResults === 0) {
+                noResultsElement.style.display = 'block';
+                return;
+            }
+            
+            noResultsElement.style.display = 'none';
+            
+            data.restaurants.forEach(restaurant => {
+                const card = document.createElement('div');
+                card.className = 'restaurant-card';
+                
+                // Get image URL or use placeholder
+                const imageUrl = restaurant.photo && restaurant.photo.pc && restaurant.photo.pc.l 
+                    ? restaurant.photo.pc.l 
+                    : 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMjAwIDIwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNlZWUiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZmlsbD0iIzk5OSI+Tm8gSW1hZ2U8L3RleHQ+PC9zdmc+';
+                
+                // Create HTML structure for the card
+                card.innerHTML = `
+                    <div class="restaurant-image">
+                        <img src="${imageUrl}" alt="${restaurant.name}">
+                    </div>
+                    <div class="restaurant-details">
+                        <h3 class="restaurant-name">${restaurant.name}</h3>
+                        
+                        <div class="restaurant-info">
+                            <strong>Genre:</strong> ${restaurant.genre ? restaurant.genre.name : 'N/A'}
+                        </div>
+                        
+                        <div class="restaurant-info">
+                            <strong>Address:</strong> ${restaurant.address}
+                        </div>
+                        
+                        ${restaurant.access ? `
+                        <div class="restaurant-info">
+                            <strong>Access:</strong> ${restaurant.access}
+                        </div>
+                        ` : ''}
+                        
+                        ${restaurant.budget && restaurant.budget.name ? `
+                        <div class="restaurant-info">
+                            <strong>Budget:</strong> ${restaurant.budget.name}
+                        </div>
+                        ` : ''}
+                        
+                        ${restaurant.open ? `
+                        <div class="restaurant-info">
+                            <strong>Open Hours:</strong> ${restaurant.open}
+                        </div>
+                        ` : ''}
+                        
+                        <a href="${restaurant.urls.pc}" target="_blank" class="restaurant-link">View on Hotpepper →</a>
+                    </div>
+                `;
+                
+                restaurantList.appendChild(card);
+            });
+        }
+        
+        // Helper functions for UI
+        function showLoading() {
+            loadingElement.style.display = 'block';
+        }
+        
+        function hideLoading() {
+            loadingElement.style.display = 'none';
+        }
+        
+        function showError(message) {
+            errorMessageElement.textContent = message;
+            errorMessageElement.style.display = 'block';
+        }
+        
+        function hideError() {
+            errorMessageElement.style.display = 'none';
+        }
+        
+        function hideResults() {
+            resultsPanel.style.display = 'none';
+        }
+        
+        // Event listeners
+        searchButton.addEventListener('click', searchRestaurants);
+        locationSearchButton.addEventListener('click', searchRestaurantsByLocation);
+        useCurrentLocationButton.addEventListener('click', getCurrentLocation);
+        
+        // Add enter key support for search inputs
+        keywordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') searchRestaurants();
+        });
+        
+        locationKeywordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') searchRestaurantsByLocation();
+        });
+        
+        // Initialize
+        fetchAreas();
+    </script>
+</body>
+</html>

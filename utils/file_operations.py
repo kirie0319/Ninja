@@ -78,3 +78,9 @@ async def get_last_conversation(history_json: list) -> Optional[Dict[str, Dict]]
                 "assistant": history[i + 1]
             }
     return None
+
+async def clear_chat_data():
+        
+    await save_json("chat_log.json", [])
+    await save_json("chatsummary.json", [])
+    await save_json("user_history.json", {})

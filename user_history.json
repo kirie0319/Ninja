@@ -1,139 +1,139 @@
 {
-  "102c4f78-70fa-4279-aa90-b90d4d4a6f43": {
-    "user_id": "64337a7b-b98d-407c-b458-b23c4039583c",
-    "created_at": "2025-04-29T14:33:20.895111",
+  "e76b8472-69c2-4512-bf00-214300c7f92c": {
+    "user_id": "786790e8-c822-4b60-80d0-20ea38395a1a",
+    "created_at": "2025-04-29T16:58:15.858231",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "都内の安いフレンチ",
+          "user_id": "e76b8472-69c2-4512-bf00-214300c7f92c",
+          "timestamp": "2025-04-29T16:58:09.518242"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "05057348-84a2-41c9-a49c-b1531eae9808",
+          "content": "都内でリーズナブルなフレンチを探していますね。場所や特に気になるエリアはありますか？また、ランチかディナーかも教えていただけると嬉しいです。",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "e76b8472-69c2-4512-bf00-214300c7f92c",
+          "timestamp": "2025-04-29T16:58:14.742244"
+        },
+        "timestamp": "2025-04-29T16:58:15.858121"
+      }
+    ]
+  },
+  "d9722d1e-71ed-4e3a-a4a6-9f6c0fb1dc80": {
+    "user_id": "c722ccec-f85e-42ae-9049-3b08cfc82ccf",
+    "created_at": "2025-04-29T16:58:37.341703",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "六本木でおしゃれなディナーがいい",
+          "user_id": "d9722d1e-71ed-4e3a-a4a6-9f6c0fb1dc80",
+          "timestamp": "2025-04-29T16:58:31.021369"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "564b413e-06c3-4469-bf45-7179f3ca2c20",
+          "content": "六本木でおしゃれなディナーですね。素敵な選択です！予算や特に食べたい料理はありますか？",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "d9722d1e-71ed-4e3a-a4a6-9f6c0fb1dc80",
+          "timestamp": "2025-04-29T16:58:36.232210"
+        },
+        "timestamp": "2025-04-29T16:58:37.341620"
+      }
+    ]
+  },
+  "c87844ef-9eda-490d-b6fb-d6da561fb95d": {
+    "user_id": "656b5dbc-4e51-4251-8fc9-3a5bd01245a6",
+    "created_at": "2025-04-29T17:07:15.399458",
     "messages": [
       {
         "user": {
           "role": "user",
           "content": "hi",
-          "user_id": "102c4f78-70fa-4279-aa90-b90d4d4a6f43",
-          "timestamp": "2025-04-29T14:33:18.288889"
+          "user_id": "c87844ef-9eda-490d-b6fb-d6da561fb95d",
+          "timestamp": "2025-04-29T17:07:09.289253"
         },
         "assistant": {
           "role": "assistant",
-          "id": "bcc37ebe-4642-41d5-b485-81fb68a38fa3",
-          "content": "Hello! How can I assist you with your Japanese dining experience today? Are you looking for restaurant recommendations in a particular area or type of cuisine?",
+          "id": "940a145e-4088-4403-88a6-2487945d287b",
+          "content": "Hello! How can I assist you with finding a great dining spot today?",
           "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
-          "user_id": "102c4f78-70fa-4279-aa90-b90d4d4a6f43",
-          "timestamp": "2025-04-29T14:33:20.892514"
+          "user_id": "c87844ef-9eda-490d-b6fb-d6da561fb95d",
+          "timestamp": "2025-04-29T17:07:13.464443"
         },
-        "timestamp": "2025-04-29T14:33:20.895023"
+        "timestamp": "2025-04-29T17:07:15.399361"
       }
     ]
   },
-  "24832625-cf87-45a7-a578-594b0282d7a0": {
-    "user_id": "7f921fd2-5647-440c-9f7c-91c79cf30fb5",
-    "created_at": "2025-04-29T14:33:49.846393",
+  "bea58d5b-d5a9-4209-823a-c5dad1e92fb7": {
+    "user_id": "86fc4f5b-15f7-49cf-b4ac-bf448fe0f431",
+    "created_at": "2025-04-29T17:07:28.004350",
     "messages": [
       {
         "user": {
           "role": "user",
-          "content": "hi",
-          "user_id": "24832625-cf87-45a7-a578-594b0282d7a0",
-          "timestamp": "2025-04-29T14:33:46.801876"
+          "content": "1. I'm looking for affordable French dining options in Tokyo.",
+          "user_id": "bea58d5b-d5a9-4209-823a-c5dad1e92fb7",
+          "timestamp": "2025-04-29T17:07:24.028389"
         },
         "assistant": {
           "role": "assistant",
-          "id": "8457b214-ede0-4cdd-b15c-4af100835091",
-          "content": "Hello! How can I assist you with your Japanese dining experience today? Are you looking for recommendations in a specific area or interested in a particular type of cuisine?",
+          "id": "6fa0e550-22a9-4b93-b8d5-11a833057387",
+          "content": "I'd be happy to help with that! Could you let me know if you have a preferred area in Tokyo? Also, are you looking for lunch or dinner options?",
           "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
-          "user_id": "24832625-cf87-45a7-a578-594b0282d7a0",
-          "timestamp": "2025-04-29T14:33:49.836381"
+          "user_id": "bea58d5b-d5a9-4209-823a-c5dad1e92fb7",
+          "timestamp": "2025-04-29T17:07:26.758904"
         },
-        "timestamp": "2025-04-29T14:33:49.846327"
+        "timestamp": "2025-04-29T17:07:28.004237"
       }
     ]
   },
-  "cf6b39b9-4e68-45cb-8a4a-2a48f1ec699c": {
-    "user_id": "4d519b7f-5d98-4dac-8ae3-bdb35660b83c",
-    "created_at": "2025-04-29T14:34:28.327960",
+  "7e7ce50a-0117-448a-81c3-a4fa8eb82a38": {
+    "user_id": "29fb3949-de91-4246-89a0-fc6871baeb6e",
+    "created_at": "2025-04-29T17:07:54.775257",
     "messages": [
       {
         "user": {
           "role": "user",
-          "content": "yeah right now I am looking for the restaurants around shibuya",
-          "user_id": "cf6b39b9-4e68-45cb-8a4a-2a48f1ec699c",
-          "timestamp": "2025-04-29T14:34:23.495386"
+          "content": "3. Enjoy a taste of France at Bistro Vingt-Trois without breaking the bank.",
+          "user_id": "7e7ce50a-0117-448a-81c3-a4fa8eb82a38",
+          "timestamp": "2025-04-29T17:07:46.700966"
         },
         "assistant": {
           "role": "assistant",
-          "id": "ea01cb99-8825-4235-bb98-f4c718c73643",
-          "content": "Great choice! Shibuya has a vibrant dining scene. Do you have a specific type of Japanese cuisine in mind, like sushi, ramen, or perhaps something else?",
+          "id": "2b14382c-757f-473f-916a-96cdbf8a5c35",
+          "content": "Bistro Vingt-Trois is a wonderful choice! Here are a few details about it:\n\n- **Location**: Located in the lively Shibuya area, known for its trendy vibe and bustling atmosphere.\n  \n- **Specialties**: Enjoy classic French dishes like coq au vin and ratatouille at affordable prices.\n\n- **Atmosphere**: Cozy and inviting, perfect for a casual lunch or dinner.\n\n- **Clientele**: Popular with both locals and expats, creating a warm and diverse dining experience.\n\n- **Hidden Value**: The chef often sources seasonal ingredients, giving traditional dishes a fresh twist.\n\nIf you'd like directions or help with reservations, feel free to ask!",
           "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
-          "user_id": "cf6b39b9-4e68-45cb-8a4a-2a48f1ec699c",
-          "timestamp": "2025-04-29T14:34:28.325825"
+          "user_id": "7e7ce50a-0117-448a-81c3-a4fa8eb82a38",
+          "timestamp": "2025-04-29T17:07:53.698923"
         },
-        "timestamp": "2025-04-29T14:34:28.327891"
+        "timestamp": "2025-04-29T17:07:54.775186"
       }
     ]
   },
-  "cf93ce0a-31ac-414a-b54e-d67c9e72afc2": {
-    "user_id": "a82ee96c-93e4-48bc-b5c7-c4627d159a2d",
-    "created_at": "2025-04-29T14:35:41.864834",
+  "8f2cbd5f-c056-45e1-ba5a-a8c2139126d0": {
+    "user_id": "6c019715-3b7c-4952-802d-c5d5046adeae",
+    "created_at": "2025-04-29T17:08:17.856471",
     "messages": [
       {
         "user": {
           "role": "user",
-          "content": "mmm what kind of cuisine can you recommend around shibuya, I want to try something unique",
-          "user_id": "cf93ce0a-31ac-414a-b54e-d67c9e72afc2",
-          "timestamp": "2025-04-29T14:35:30.112177"
+          "content": "1. Shibuya sounds like a vibrant location for dining!",
+          "user_id": "8f2cbd5f-c056-45e1-ba5a-a8c2139126d0",
+          "timestamp": "2025-04-29T17:08:04.817991"
         },
         "assistant": {
           "role": "assistant",
-          "id": "44cecb5a-cbe2-49e6-badf-ba6f9f79bb76",
-          "content": "Sure! Here are a few unique dining options in Shibuya:\n\n### 1. **Uobei Shibuya Dogenzaka**\n- **Cuisine**: Conveyor belt sushi with a twist\n- **Specialties**: Try the creative sushi rolls, which are served via a futuristic conveyor system\n- **Atmosphere**: Casual and fun, with a modern vibe\n- **Hidden Value**: The interactive ordering system makes it a lively experience\n\n### 2. **Kaikaya by the Sea**\n- **Cuisine**: Fusion of Japanese and Western seafood\n- **Specialties**: Grilled fish dishes and sashimi \n- **Atmosphere**: Cozy and eclectic, drawing a mix of locals and tourists\n- **Hidden Value**: Known for its friendly staff and unique fish-based dishes\n\n### 3. **Izakaya Masaka**\n- **Cuisine**: Creative Japanese pub food\n- **Specialties**: Grilled skewers and inventive small plates\n- **Atmosphere**: Lively and bustling, great for groups\n- **Hidden Value**: Offers a mix of traditional and modern izakaya fare\n\nWould you like more details on any of these, or perhaps a different type of recommendation?",
+          "id": "991f3554-e58c-4c6f-b419-e5597dd4db98",
+          "content": "Absolutely! Shibuya is a fantastic choice, bustling with energy and a wide range of dining options. If you're exploring around there, do you have any specific type of cuisine or dining experience in mind?",
           "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
-          "user_id": "cf93ce0a-31ac-414a-b54e-d67c9e72afc2",
-          "timestamp": "2025-04-29T14:35:41.862548"
+          "user_id": "8f2cbd5f-c056-45e1-ba5a-a8c2139126d0",
+          "timestamp": "2025-04-29T17:08:15.211369"
         },
-        "timestamp": "2025-04-29T14:35:41.864767"
-      }
-    ]
-  },
-  "ef136ece-6fa6-4224-88ac-74f112b8fbbc": {
-    "user_id": "022307a6-d228-4556-b401-5f13080abe1b",
-    "created_at": "2025-04-29T14:36:32.341228",
-    "messages": [
-      {
-        "user": {
-          "role": "user",
-          "content": "Great umm more detail",
-          "user_id": "ef136ece-6fa6-4224-88ac-74f112b8fbbc",
-          "timestamp": "2025-04-29T14:36:28.347933"
-        },
-        "assistant": {
-          "role": "assistant",
-          "id": "299632fa-6577-4e0c-a96c-ebff91e72912",
-          "content": "Of course! Which restaurant would you like more details about? Here's a quick reminder:\n\n1. **Uobei Shibuya Dogenzaka** - Conveyor belt sushi with a modern twist.\n2. **Kaikaya by the Sea** - Fusion of Japanese and Western seafood.\n3. **Izakaya Masaka** - Creative Japanese pub food. \n\nPlease let me know which one interests you!",
-          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
-          "user_id": "ef136ece-6fa6-4224-88ac-74f112b8fbbc",
-          "timestamp": "2025-04-29T14:36:32.338925"
-        },
-        "timestamp": "2025-04-29T14:36:32.341178"
-      }
-    ]
-  },
-  "d886ece7-b73f-42fc-a6eb-58084d7c884c": {
-    "user_id": "3fb150cf-dcbc-40b4-80a1-20f583cad1e8",
-    "created_at": "2025-04-29T14:37:09.497913",
-    "messages": [
-      {
-        "user": {
-          "role": "user",
-          "content": "Kaikaya",
-          "user_id": "d886ece7-b73f-42fc-a6eb-58084d7c884c",
-          "timestamp": "2025-04-29T14:37:02.349810"
-        },
-        "assistant": {
-          "role": "assistant",
-          "id": "ffd36adf-042e-4ad5-b287-28f6ca95108d",
-          "content": "Certainly! Here's more about **Kaikaya by the Sea**:\n\n### Overview\n- **Cuisine**: Fusion of Japanese and Western seafood.\n\n### Specialties\n- **Grilled Fish Dishes**: Known for their delightful and inventive take on fresh fish.\n- **Sashimi**: A must-try for seafood lovers.\n\n### Atmosphere\n- **Cozy and Eclectic**: The restaurant is adorned with marine-themed decor, creating a warm and inviting ambiance.\n- **Clientele**: A mix of locals and tourists, offering a lively and welcoming vibe.\n\n### Hidden Value\n- **Friendly Staff**: Known for their warm service and hospitality.\n- **Unique Dishes**: The fusion of Japanese techniques with Western spices and ingredients creates a unique dining experience.\n\n### Practical Information\n- **Location**: A short walk from Shibuya Station.\n- **Reservations**: Recommended, especially during peak hours.\n\nWould you like assistance with reservations or have any other questions?",
-          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
-          "user_id": "d886ece7-b73f-42fc-a6eb-58084d7c884c",
-          "timestamp": "2025-04-29T14:37:09.495173"
-        },
-        "timestamp": "2025-04-29T14:37:09.497826"
+        "timestamp": "2025-04-29T17:08:17.856324"
       }
     ]
   }

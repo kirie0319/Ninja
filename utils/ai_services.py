@@ -25,12 +25,14 @@ class AIService:
         self.intent_prompt = None
         self.restaurant_prompt = None
         self.user_history_prompt = None
+        self.quick_reply_prompt = None
     
     async def initialize_prompt(self):
         self.summarize_prompt = await self.yaml_manager.load_prompt("prompts", "summarize")
         self.intent_prompt = await self.yaml_manager.load_prompt("prompts", "intent_classify")
         self.restaurant_prompt = await self.yaml_manager.load_prompt("prompts", "restaurant")
         self.user_history_prompt = await self.yaml_manager.load_prompt("prompts", "summarize_user_rep")
+        self.quick_reply_prompt = await self.yaml_manager.load_prompt("prompts", "quick_reply_prompt")
     
     async def openai_classify_intent(self, user_message: str) -> str:
         if not self.intent_prompt:
@@ -109,3 +111,35 @@ class AIService:
         except Exception as e:
             print(f"Error generating response: {e}")
             return "I'm soory, I'm having trouble connecting to my services right now. Please try again later."
+
+    async def openai_generate_quick_reply(self, user_message: str, assistant_message: str, summary: list) -> str:
+        if not self.quick_reply_prompt:
+            await self.initialize_prompt()
+        prompt_text = self.quick_reply_prompt["prompt"].format(
+            user_body=user_message,
+            assistant_body=assistant_message,
+            summary=summary
+        )
+        try:
+            response = await self.openai_client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt_text
+                    }
+                ]
+            )
+            content = response.choices[0].message.content.strip()
+            quick_replies = [line for line in content.split('\n') if line.strip()]
+
+            return quick_replies[:4]
+        except Exception as e:
+            print(f"Error generating quick replies: {e}")
+            return [
+                "Thanks for sharing",
+                "Tell me more",
+                "Interesting",
+                "I see"
+            ]
+

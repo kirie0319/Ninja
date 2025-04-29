@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from utils.file_operations import load_json, save_json, to_pretty_json, get_last_conversation
+from utils.file_operations import load_json, save_json, to_pretty_json, get_last_conversation, clear_chat_data
 from utils.ai_services import AIService
 
 ai_service = AIService()
@@ -175,6 +175,12 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
     history.append(assistant_response)
     await save_json(chat_log_file, history)
 
+    quick_reply_response = await ai_service.openai_generate_quick_reply(body, response_text, summary_json)
+
+    result["quickReplies"] = quick_reply_response
+
+
+
     
     
     message_pair = {
@@ -195,6 +201,11 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
     response.set_cookie(key="session_id", value=session_id)
     
     return response
+
+@app.post("/clear")
+async def Clear():
+    await clear_chat_data()
+    return JSONResponse(content={"status": "success", "message": "Clear chat history"})
 
 if __name__ == "__main__":
     # Ensure index.html is in templates directory
