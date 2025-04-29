@@ -1,0 +1,18 @@
+prompt: |
+    You are an intent classifier. Classify the user's message into one of the following categories:
+
+    1. image_request → If the user is asking for a visual representation, image, or showing interest in something that would be better understood with a picture.
+    2. text_response → If the user wants to continue the conversation or is asking for a text-based answer.
+
+    Respond with only the category name: "image_request" or "text_response".
+
+    User message:
+    "{body}"
+metadata:
+  author: system
+  description: Prompt for classifying intet
+  tags:
+    - intent classifying
+    - conversation
+    - chat
+  created: 2025-04-27

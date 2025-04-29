@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja.AI - Authentic Japanese Restaurant Guide</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            background-image: url('https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            min-height: 100vh;
+        }
+        
+        .app-container {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 16px;
+        }
+        
+        .chat-container {
+            height: 60vh;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .user-message {
+            background-color: #E53E3E;
+            color: white;
+            border-radius: 18px 18px 0 18px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 80%;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        .bot-message {
+            background-color: #F9FAFB;
+            border-radius: 18px 18px 18px 0;
+            border-left: 4px solid #E53E3E;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            max-width: 80%;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        .input-container {
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ninja-logo {
+            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.3));
+        }
+        
+        .section-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            background-color: #FEF2F2;
+            color: #E53E3E;
+            height: 48px;
+            width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .send-button {
+            background-color: #E53E3E;
+            color: white;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .send-button:hover {
+            background-color: #C53030;
+            transform: scale(1.05);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .typing-indicator {
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            margin: 0 1px;
+            background-color: #E53E3E;
+            border-radius: 50%;
+            animation: typing-dot 1.4s infinite ease-in-out;
+            opacity: 0.7;
+        }
+        
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing-dot {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* Custom scrollbar */
+        .chat-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .chat-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+        
+        .chat-container::-webkit-scrollbar-thumb {
+            background: rgba(229, 62, 62, 0.5);
+            border-radius: 10px;
+        }
+        
+        .chat-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(229, 62, 62, 0.7);
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 640px) {
+            .app-container {
+                border-radius: 0;
+                min-height: 100vh;
+            }
+            .chat-container {
+                height: 65vh;
+            }
+        }
+    </style>
+</head>
+<body class="p-0 sm:p-4 md:p-8">
+    <div class="app-container mx-auto max-w-5xl min-h-screen sm:min-h-0 flex flex-col">
+        <!-- Header -->
+        <header class="flex items-center justify-between py-6 px-6 border-b border-gray-200">
+            <div class="flex items-center space-x-3">
+                <div class="ninja-logo bg-red-600 text-white p-2 rounded-lg shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-bold text-gray-800">Ninja.AI</h1>
+                    <p class="text-sm text-gray-500">Find your favorite in Japan</p>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <span class="bg-red-50 text-red-600 text-xs px-3 py-1 rounded-full font-medium">
+                    <i class="fas fa-utensils mr-1"></i> Tokyo Dining Expert
+                </span>
+            </div>
+        </header>
+
+        <!-- Main content -->
+        <main class="flex-1 p-4 md:p-6 flex flex-col">
+            <!-- Chat container -->
+            <div class="chat-container p-4 mb-4" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="bot-message p-4 mb-4 ml-2">
+                    <p class="text-gray-800">Welcome to Ninja.AI! I'm your personal guide to the best authentic Japanese restaurants in Tokyo. How can I help you discover your next unforgettable dining experience?</p>
+                </div>
+            </div>
+
+            <!-- Input area -->
+            <div class="input-container flex items-center px-4 py-2 mb-4">
+                <input type="text" id="userInput" placeholder="Ask about Japanese restaurants..." class="flex-grow bg-transparent border-0 focus:outline-none focus:ring-0 text-gray-700" autofocus>
+                <button id="sendButton" class="send-button ml-2">
+                    <i class="fas fa-paper-plane text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Features section -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="section-card p-4">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Local Expertise</h3>
+                    <p class="text-sm text-gray-600 mt-2">Discover hidden gems and local favorites beyond the tourist spots</p>
+                </div>
+                <div class="section-card p-4">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Personalized Recommendations</h3>
+                    <p class="text-sm text-gray-600 mt-2">Get suggestions tailored to your tastes, budget, and dining preferences</p>
+                </div>
+                <div class="section-card p-4">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800">Insider Information</h3>
+                    <p class="text-sm text-gray-600 mt-2">Learn about specialty dishes, reservation tips, and cultural etiquette</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-xs py-4 border-t border-gray-200">
+            <p>Ninja.AI - Your authentic guide to Japanese dining experiences</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            
+            // Show typing indicator
+            function showTypingIndicator() {
+                const indicatorDiv = document.createElement('div');
+                indicatorDiv.className = 'bot-message p-3 mb-4 ml-2 typing-indicator-container';
+                indicatorDiv.id = 'typingIndicator';
+                indicatorDiv.innerHTML = `
+                    <div class="typing-indicator p-2">
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                    </div>
+                `;
+                chatMessages.appendChild(indicatorDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Remove typing indicator
+            function removeTypingIndicator() {
+                const indicator = document.getElementById('typingIndicator');
+                if (indicator) {
+                    indicator.remove();
+                }
+            }
+
+            function addMessage(message, isUser) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = isUser 
+                    ? 'user-message p-4 mb-4 ml-auto mr-2' 
+                    : 'bot-message p-4 mb-4 ml-2';
+                
+                // Process message text (detect URLs and make them clickable)
+                let messageText = message;
+                const urlRegex = /(https?:\/\/[^\s]+)/g;
+                messageText = messageText.replace(urlRegex, url => `<a href="${url}" target="_blank" class="underline text-blue-600 hover:text-blue-800">${url}</a>`);
+                
+                messageDiv.innerHTML = `<p class="${isUser ? 'text-white' : 'text-gray-800'}">${messageText}</p>`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function handleUserMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+
+                // Add user message to chat
+                addMessage(message, true);
+                userInput.value = '';
+                
+                // Show typing indicator
+                showTypingIndicator();
+
+                // Send to backend
+                fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({message: message}),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Remove typing indicator
+                    removeTypingIndicator();
+                    
+                    // Add bot response
+                    addMessage(data.response, false);
+                    
+                    // If there's an image in the response
+                    if (data.image_url) {
+                        const imageDiv = document.createElement('div');
+                        imageDiv.className = 'bot-message p-3 mb-4 ml-2';
+                        imageDiv.innerHTML = `
+                            <img src="${data.image_url}" alt="Restaurant image" class="rounded-lg w-full mt-2 shadow-md">
+                            <p class="text-xs text-gray-500 mt-2">Restaurant image reference</p>
+                        `;
+                        chatMessages.appendChild(imageDiv);
+                        chatMessages.scrollTop = chatMessages.scrollHeight;
+                    }
+                })
+                .catch(error => {
+                    // Remove typing indicator
+                    removeTypingIndicator();
+                    
+                    // For the demo, simulate responses
+                    let botResponse = "";
+                    if (message.toLowerCase().includes('sushi')) {
+                        botResponse = "Tokyo has amazing sushi restaurants! Could you tell me what kind of atmosphere you're looking for? Would you prefer high-end omakase, a casual local spot, or something in between?";
+                    } else if (message.toLowerCase().includes('ramen')) {
+                        botResponse = "Ramen is a fantastic choice! Tokyo offers countless styles from tonkotsu to shoyu. What neighborhood will you be in, and do you have any preference for ramen style?";
+                    } else if (message.toLowerCase().includes('budget') || message.toLowerCase().includes('price')) {
+                        botResponse = "To help find the perfect match, could you give me an idea of your budget per person? Tokyo has excellent options across many price points.";
+                    } else {
+                        botResponse = "I'd be happy to recommend some great Japanese restaurants. To help narrow down options, could you share what type of cuisine you're most interested in? For example: sushi, ramen, yakitori, kaiseki, etc.";
+                    }
+                    addMessage(botResponse, false);
+                });
+            }
+
+            // Event listeners
+            sendButton.addEventListener('click', handleUserMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    handleUserMessage();
+                }
+            });
+            
+            // Focus input on load
+            userInput.focus();
+            
+            // Add some visual interactivity
+            userInput.addEventListener('focus', function() {
+                document.querySelector('.input-container').classList.add('ring-2', 'ring-red-100');
+            });
+            
+            userInput.addEventListener('blur', function() {
+                document.querySelector('.input-container').classList.remove('ring-2', 'ring-red-100');
+            });
+        });
+    </script>
+</body>
+</html>

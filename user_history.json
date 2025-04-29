@@ -1,0 +1,140 @@
+{
+  "102c4f78-70fa-4279-aa90-b90d4d4a6f43": {
+    "user_id": "64337a7b-b98d-407c-b458-b23c4039583c",
+    "created_at": "2025-04-29T14:33:20.895111",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "hi",
+          "user_id": "102c4f78-70fa-4279-aa90-b90d4d4a6f43",
+          "timestamp": "2025-04-29T14:33:18.288889"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "bcc37ebe-4642-41d5-b485-81fb68a38fa3",
+          "content": "Hello! How can I assist you with your Japanese dining experience today? Are you looking for restaurant recommendations in a particular area or type of cuisine?",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "102c4f78-70fa-4279-aa90-b90d4d4a6f43",
+          "timestamp": "2025-04-29T14:33:20.892514"
+        },
+        "timestamp": "2025-04-29T14:33:20.895023"
+      }
+    ]
+  },
+  "24832625-cf87-45a7-a578-594b0282d7a0": {
+    "user_id": "7f921fd2-5647-440c-9f7c-91c79cf30fb5",
+    "created_at": "2025-04-29T14:33:49.846393",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "hi",
+          "user_id": "24832625-cf87-45a7-a578-594b0282d7a0",
+          "timestamp": "2025-04-29T14:33:46.801876"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "8457b214-ede0-4cdd-b15c-4af100835091",
+          "content": "Hello! How can I assist you with your Japanese dining experience today? Are you looking for recommendations in a specific area or interested in a particular type of cuisine?",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "24832625-cf87-45a7-a578-594b0282d7a0",
+          "timestamp": "2025-04-29T14:33:49.836381"
+        },
+        "timestamp": "2025-04-29T14:33:49.846327"
+      }
+    ]
+  },
+  "cf6b39b9-4e68-45cb-8a4a-2a48f1ec699c": {
+    "user_id": "4d519b7f-5d98-4dac-8ae3-bdb35660b83c",
+    "created_at": "2025-04-29T14:34:28.327960",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "yeah right now I am looking for the restaurants around shibuya",
+          "user_id": "cf6b39b9-4e68-45cb-8a4a-2a48f1ec699c",
+          "timestamp": "2025-04-29T14:34:23.495386"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "ea01cb99-8825-4235-bb98-f4c718c73643",
+          "content": "Great choice! Shibuya has a vibrant dining scene. Do you have a specific type of Japanese cuisine in mind, like sushi, ramen, or perhaps something else?",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "cf6b39b9-4e68-45cb-8a4a-2a48f1ec699c",
+          "timestamp": "2025-04-29T14:34:28.325825"
+        },
+        "timestamp": "2025-04-29T14:34:28.327891"
+      }
+    ]
+  },
+  "cf93ce0a-31ac-414a-b54e-d67c9e72afc2": {
+    "user_id": "a82ee96c-93e4-48bc-b5c7-c4627d159a2d",
+    "created_at": "2025-04-29T14:35:41.864834",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "mmm what kind of cuisine can you recommend around shibuya, I want to try something unique",
+          "user_id": "cf93ce0a-31ac-414a-b54e-d67c9e72afc2",
+          "timestamp": "2025-04-29T14:35:30.112177"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "44cecb5a-cbe2-49e6-badf-ba6f9f79bb76",
+          "content": "Sure! Here are a few unique dining options in Shibuya:\n\n### 1. **Uobei Shibuya Dogenzaka**\n- **Cuisine**: Conveyor belt sushi with a twist\n- **Specialties**: Try the creative sushi rolls, which are served via a futuristic conveyor system\n- **Atmosphere**: Casual and fun, with a modern vibe\n- **Hidden Value**: The interactive ordering system makes it a lively experience\n\n### 2. **Kaikaya by the Sea**\n- **Cuisine**: Fusion of Japanese and Western seafood\n- **Specialties**: Grilled fish dishes and sashimi \n- **Atmosphere**: Cozy and eclectic, drawing a mix of locals and tourists\n- **Hidden Value**: Known for its friendly staff and unique fish-based dishes\n\n### 3. **Izakaya Masaka**\n- **Cuisine**: Creative Japanese pub food\n- **Specialties**: Grilled skewers and inventive small plates\n- **Atmosphere**: Lively and bustling, great for groups\n- **Hidden Value**: Offers a mix of traditional and modern izakaya fare\n\nWould you like more details on any of these, or perhaps a different type of recommendation?",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "cf93ce0a-31ac-414a-b54e-d67c9e72afc2",
+          "timestamp": "2025-04-29T14:35:41.862548"
+        },
+        "timestamp": "2025-04-29T14:35:41.864767"
+      }
+    ]
+  },
+  "ef136ece-6fa6-4224-88ac-74f112b8fbbc": {
+    "user_id": "022307a6-d228-4556-b401-5f13080abe1b",
+    "created_at": "2025-04-29T14:36:32.341228",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "Great umm more detail",
+          "user_id": "ef136ece-6fa6-4224-88ac-74f112b8fbbc",
+          "timestamp": "2025-04-29T14:36:28.347933"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "299632fa-6577-4e0c-a96c-ebff91e72912",
+          "content": "Of course! Which restaurant would you like more details about? Here's a quick reminder:\n\n1. **Uobei Shibuya Dogenzaka** - Conveyor belt sushi with a modern twist.\n2. **Kaikaya by the Sea** - Fusion of Japanese and Western seafood.\n3. **Izakaya Masaka** - Creative Japanese pub food. \n\nPlease let me know which one interests you!",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "ef136ece-6fa6-4224-88ac-74f112b8fbbc",
+          "timestamp": "2025-04-29T14:36:32.338925"
+        },
+        "timestamp": "2025-04-29T14:36:32.341178"
+      }
+    ]
+  },
+  "d886ece7-b73f-42fc-a6eb-58084d7c884c": {
+    "user_id": "3fb150cf-dcbc-40b4-80a1-20f583cad1e8",
+    "created_at": "2025-04-29T14:37:09.497913",
+    "messages": [
+      {
+        "user": {
+          "role": "user",
+          "content": "Kaikaya",
+          "user_id": "d886ece7-b73f-42fc-a6eb-58084d7c884c",
+          "timestamp": "2025-04-29T14:37:02.349810"
+        },
+        "assistant": {
+          "role": "assistant",
+          "id": "ffd36adf-042e-4ad5-b287-28f6ca95108d",
+          "content": "Certainly! Here's more about **Kaikaya by the Sea**:\n\n### Overview\n- **Cuisine**: Fusion of Japanese and Western seafood.\n\n### Specialties\n- **Grilled Fish Dishes**: Known for their delightful and inventive take on fresh fish.\n- **Sashimi**: A must-try for seafood lovers.\n\n### Atmosphere\n- **Cozy and Eclectic**: The restaurant is adorned with marine-themed decor, creating a warm and inviting ambiance.\n- **Clientele**: A mix of locals and tourists, offering a lively and welcoming vibe.\n\n### Hidden Value\n- **Friendly Staff**: Known for their warm service and hospitality.\n- **Unique Dishes**: The fusion of Japanese techniques with Western spices and ingredients creates a unique dining experience.\n\n### Practical Information\n- **Location**: A short walk from Shibuya Station.\n- **Reservations**: Recommended, especially during peak hours.\n\nWould you like assistance with reservations or have any other questions?",
+          "image_url": "https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?cs=srgb&dl=pexels-life-of-pix-67468.jpg&fm=jpg",
+          "user_id": "d886ece7-b73f-42fc-a6eb-58084d7c884c",
+          "timestamp": "2025-04-29T14:37:09.495173"
+        },
+        "timestamp": "2025-04-29T14:37:09.497826"
+      }
+    ]
+  }
+}
