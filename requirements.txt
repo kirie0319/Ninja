@@ -3,7 +3,6 @@ twilio
 openai
 anthropic
 pyyaml 
-psycopg2
 python-dotenv 
 flask_sqlalchemy 
 flask_migrate
@@ -30,3 +29,6 @@ pandas
 pgvector 
 psycopg
 pytest
+psycopg2-binary
+pinecone
+langchain
