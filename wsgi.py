@@ -110,12 +110,12 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
     
     history.append(user_message)
 
-    intent = await ai_service.openai_classify_intent(body)
+    intent = await ai_service.openrouter_classify_intent(body)
     
     # Process the response based on intent
     if intent == "image_request":
         
-        text_response = await ai_service.openai_generate_response(body, summary_json, user_history_json, last_two_json)
+        text_response = await ai_service.openrouter_generate_response(body, summary_json, user_history_json, last_two_json)
         
         response_text = text_response
         
@@ -128,7 +128,7 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
             "timestamp": datetime.now().isoformat()
         }
 
-        quick_response = await ai_service.openai_generate_quick_summarize_response(body)
+        quick_response = await ai_service.openrouter_generate_quick_summarize_response(body)
 
         quick_assistant_response = {
             "role": "assistant",
@@ -145,7 +145,7 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
         }
     
     else:  # text_response
-        text_response = await ai_service.openai_generate_response(body, summary_json, user_history_json, last_two_json)
+        text_response = await ai_service.openrouter_generate_response(body, summary_json, user_history_json, last_two_json)
         
         response_text = text_response
         
@@ -157,7 +157,7 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
             "timestamp": datetime.now().isoformat()
         }
 
-        quick_response = await ai_service.openai_generate_quick_summarize_response(body)
+        quick_response = await ai_service.openrouter_generate_quick_summarize_response(body)
 
         quick_assistant_response = {
             "role": "assistant",
@@ -176,7 +176,7 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
     history.append(assistant_response)
     await save_json(chat_log_file, history)
 
-    quick_reply_response = await ai_service.openai_generate_quick_reply(body, response_text, summary_json)
+    quick_reply_response = await ai_service.openrouter_generate_quick_reply(body, response_text, summary_json)
 
     result["quickReplies"] = quick_reply_response
 
@@ -192,7 +192,7 @@ async def process_message(message_request: MessageRequest, session_id: Optional[
     
     await update_user_messages(user_id, message_pair)
     
-    summarize_response = await ai_service.openai_summarize_conversation(summary_json, user_history_json, last_two_json)
+    summarize_response = await ai_service.openrouter_summarize_conversation(summary_json, user_history_json, last_two_json)
     
     summary = [{"role": "developer", "content": summarize_response}]
     await save_json(summary_file, summary)
