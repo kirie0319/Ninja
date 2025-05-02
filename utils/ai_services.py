@@ -20,6 +20,11 @@ class AIService:
             api_key=os.getenv("ANTHROPIC_API_KEY")
         )
         self.anthropic_default_model = "anthropic/claude-3.7-sonnet"
+        self.openrouter_client = AsyncOpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=os.getenv("OPENROUTER_API_KEY")
+        )
+        self.openrouter_default_model = "openai/gpt-4o"
 
         self.summarize_prompt = None
         self.intent_prompt = None
@@ -34,25 +39,31 @@ class AIService:
         self.user_history_prompt = await self.yaml_manager.load_prompt("prompts", "summarize_user_rep")
         self.quick_reply_prompt = await self.yaml_manager.load_prompt("prompts", "quick_reply_prompt")
     
-    async def openai_classify_intent(self, user_message: str) -> str:
+    async def openrouter_classify_intent(self, user_message: str) -> str:
         if not self.intent_prompt:
             await self.initialize_prompt()
         prompt_text = self.intent_prompt["prompt"].format(body=user_message)
         # print(prompt_text)
         try:
-            response = await self.openai_client.responses.create(
-                model=self.openai_default_model,
-                input=[
-                    {"role": "system", "content": "You classify intent."},
-                    {"role": "user", "content": prompt_text}
+            response = await self.openrouter_client.chat.completions.create(
+                model="openai/gpt-3.5-turbo",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You classify intent."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt_text
+                    }
                 ]
             )
-            return response.output_text
+            return response.choices[0].message.content.strip()
         except Exception as e:
             print(f"Error classifying intent: {e}")
             return "I'm sorry, I'm having troubule connecting to my services right now. Please try again later."
     
-    async def openai_summarize_conversation(self, summary: list, user_history: list, last_two: list) -> str:
+    async def openrouter_summarize_conversation(self, summary: list, user_history: list, last_two: list) -> str:
         if not self.summarize_prompt:
             await self.initialize_prompt()
         prompt_text = self.summarize_prompt["prompt"].format(
@@ -62,19 +73,21 @@ class AIService:
         )
         # print(prompt_text)
         try:
-            response = await self.openai_client.responses.create(
-                model=self.openai_default_model,
-                input=[
-                    {"role": "user", "content": prompt_text}
-                ],
-                store=False
+            response = await self.openrouter_client.chat.completions.create(
+                model=self.openrouter_default_model,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt_text
+                    }
+                ]
             )
-            return response.output_text
+            return response.choices[0].message.content.strip()
         except Exception as e:
             print(f"Error summarizing conversation: {e}")
             return "Failed to summarize conversation."
 
-    async def openai_generate_response(self, user_message: str, summary: list, user_history: list, last_two: list) -> str:
+    async def openrouter_generate_response(self, user_message: str, summary: list, user_history: list, last_two: list) -> str:
         if not self.restaurant_prompt:
             await self.initialize_prompt()
         prompt_text = self.restaurant_prompt["prompt"].format(
@@ -84,35 +97,46 @@ class AIService:
         )
         print(prompt_text)
         try:
-            response = await self.openai_client.responses.create(
-                model=self.openai_default_model,
-                instructions=prompt_text,
-                input=user_message,
-                store=False
+            response = await self.openrouter_client.chat.completions.create(
+                model=self.openrouter_default_model,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt_text
+                    }
+                ]
             )
-            return response.output_text
+            return response.choices[0].message.content.strip()
+                
         except Exception as e:
             print(f"Error generating response: {e}")
-            return "I'm soory, I'm having trouble connecting to my services right now. Please try again later."
+            return "I'm sorry, I'm having trouble connecting to my services right now. Please try again later."
 
-    async def openai_generate_quick_summarize_response(self, user_message: str) -> str:
+    async def openrouter_generate_quick_summarize_response(self, user_message: str) -> str:
         if not self.user_history_prompt:
             await self.initialize_prompt()
         prompt_text = self.user_history_prompt["prompt"]
         # print(prompt_text)
         try:
-            response = await self.openai_client.responses.create(
-               model=self.openai_default_model,
-                instructions=prompt_text,
-                input=user_message,
-                store=False 
+            response = await self.openrouter_client.chat.completions.create(
+                model=self.openrouter_default_model,
+                messages=[
+                    {
+                        "role": "assistant",
+                        "content": prompt_text
+                    },
+                    {
+                        "role": "user",
+                        "content": user_message
+                    }
+                ]
             )
-            return response.output_text
+            return response.choices[0].message.content.strip()
         except Exception as e:
             print(f"Error generating response: {e}")
             return "I'm soory, I'm having trouble connecting to my services right now. Please try again later."
 
-    async def openai_generate_quick_reply(self, user_message: str, assistant_message: str, summary: list) -> str:
+    async def openrouter_generate_quick_reply(self, user_message: str, assistant_message: str, summary: list) -> str:
         if not self.quick_reply_prompt:
             await self.initialize_prompt()
         prompt_text = self.quick_reply_prompt["prompt"].format(
@@ -121,8 +145,8 @@ class AIService:
             summary=summary
         )
         try:
-            response = await self.openai_client.chat.completions.create(
-                model="gpt-3.5-turbo",
+            response = await self.openrouter_client.chat.completions.create(
+                model="openai/gpt-3.5-turbo",
                 messages=[
                     {
                         "role": "user",
