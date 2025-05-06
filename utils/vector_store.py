@@ -11,7 +11,11 @@ load_dotenv()
 
 class VectorStore:
     def __init__(self):
-        pc = Pinecone(api_key=os.getenv("PINECONE_API_KEY"))
+        pc = Pinecone(
+            api_key=os.getenv("PINECONE_API_KEY"),
+            environment="us-east-1-aws"
+        )
+        print(pc.list_indexes())
         
         index_name = os.getenv("PINECONE_INDEX")
         index_name_list = [idx["name"] for idx in pc.list_indexes()]
