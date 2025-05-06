@@ -1,0 +1,692 @@
+{
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo conversation took place. The provided chat history and recent conversation logs are empty, indicating that no interaction occurred between the user and the AI assistant.\\n\\n#### 2. **Key Points**\\n- No messages were exchanged.\\n- No questions were asked or answered.\\n- No decisions or insights were discussed.\\n\\n#### 3. **Topic Timeline**\\n*Not applicable, as there were no topics discussed.*\\n\\n#### 4. **Follow-up Items**\\n- Await user input to initiate a conversation.\\n- No outstanding topics or action items.\\n\\n#### 5. **Context Notes**\\n- The conversation history is empty.\\n- No fictional setting or special tone is present.\\n- The context is ready for a new conversation to begin.\\n\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T01:41:35.352393"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo conversation took place. The provided chat history and recent conversation logs are empty, indicating that no interaction occurred between the user and the AI assistant.\\n\\n#### 2. **Key Points**\\n- No messages were exchanged.\\n- No questions were asked or answered.\\n- No decisions or insights were discussed.\\n\\n#### 3. **Topic Timeline**\\n*Not applicable, as there were no topics discussed.*\\n\\n#### 4. **Follow-up Items**\\n- Await user input to initiate a conversation.\\n- No outstanding topics or action items.\\n\\n#### 5. **Context Notes**\\n- The conversation history is empty.\\n- No fictional setting or special tone is present.\\n- The context is ready for a new conversation to begin.\\n\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {'cuisine_type': '\u5bff\u53f8', 'budget_level': None, 'location': None, 'travel_time': None, 'party_size': None, 'seating_preference': None, 'dietary_restrictions': [], 'occasion': None, 'english_menu_needed': None, 'last_updated': '2025-05-04T01:41:35.352393'}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"\u5bff\u53f8\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T01:41:35.352393"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:44:12.991348",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo conversation history is available; the chat appears to be empty. No interaction has taken place between a user and the AI assistant in this instance.\\n\\n#### 2. **Key Points**\\n- No messages were exchanged.\\n- No topics or questions were discussed.\\n- No decisions or insights were produced.\\n\\n#### 3. **Topic Timeline**\\nNot applicable, as there were no topics discussed.\\n\\n#### 4. **Follow-up Items**\\n- None at this time; conversation has not yet started.\\n\\n#### 5. **Context Notes**\\n- There is no context, fictional or otherwise, as no conversation history exists.\\n- No particular tone or relationship dynamic is present.\\n\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "No",
+    "last_updated": "2025-05-04T01:43:48.991377"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo conversation history is available; the chat appears to be empty. No interaction has taken place between a user and the AI assistant in this instance.\\n\\n#### 2. **Key Points**\\n- No messages were exchanged.\\n- No topics or questions were discussed.\\n- No decisions or insights were produced.\\n\\n#### 3. **Topic Timeline**\\nNot applicable, as there were no topics discussed.\\n\\n#### 4. **Follow-up Items**\\n- None at this time; conversation has not yet started.\\n\\n#### 5. **Context Notes**\\n- There is no context, fictional or otherwise, as no conversation history exists.\\n- No particular tone or relationship dynamic is present.\\n\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T01:43:48.991377\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "No",
+    "last_updated": "2025-05-04T01:43:48.991377"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:45:02.873584",
+  "input_message": "\u6771\u4eac\u3067\u7f8e\u5473\u3057\u3044\u65e5\u672c\u98df\u3092\u98df\u3079\u305f\u3044",
+  "existing_preferences": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '\u6771\u4eac\u3067\u7f8e\u5473\u3057\u3044\u65e5\u672c\u98df\u3092\u98df\u3079\u305f\u3044'\nCURRENT PREFERENCES: {}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Kaiseki\",\n    \"budget_level\": \"High\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:45:05.110489",
+  "input_message": "\u65b0\u5bbf\u30672\u4eba\u3067\u30c7\u30a3\u30ca\u30fc",
+  "existing_preferences": {
+    "location": "Shinjuku",
+    "cuisine_type": "Traditional Japanese Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '\u65b0\u5bbf\u30672\u4eba\u3067\u30c7\u30a3\u30ca\u30fc'\nCURRENT PREFERENCES: {\"location\": \"Shinjuku\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Shinjuku\",\n    \"cuisine_type\": \"Traditional Japanese Kaiseki\",\n    \"budget_level\": \"High\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Shinjuku",
+    "cuisine_type": "Traditional Japanese Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "location": "Shinjuku",
+    "cuisine_type": "Traditional Japanese Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:45:06.453649",
+  "input_message": "\u6e0b\u8c37\u3067\u9ad8\u7d1a\u306a\u548c\u98df\u3092\u63a2\u3057\u3066\u3044\u307e\u3059",
+  "existing_preferences": {
+    "location": "Shibuya",
+    "budget_level": "High",
+    "cuisine_type": "Kaiseki",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '\u6e0b\u8c37\u3067\u9ad8\u7d1a\u306a\u548c\u98df\u3092\u63a2\u3057\u3066\u3044\u307e\u3059'\nCURRENT PREFERENCES: {\"location\": \"Shibuya\", \"budget_level\": \"High\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Shibuya\",\n    \"cuisine_type\": \"Kaiseki\",\n    \"budget_level\": \"High\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Shibuya",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "location": "Shibuya",
+    "budget_level": "High",
+    "cuisine_type": "Kaiseki",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:47:35.240613",
+  "input_message": "\u6771\u4eac\u3067\u7f8e\u5473\u3057\u3044\u65e5\u672c\u98df\u3092\u98df\u3079\u305f\u3044",
+  "existing_preferences": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '\u6771\u4eac\u3067\u7f8e\u5473\u3057\u3044\u65e5\u672c\u98df\u3092\u98df\u3079\u305f\u3044'\nCURRENT PREFERENCES: {}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Kaiseki\",\n    \"budget_level\": \"High\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:47:37.448155",
+  "input_message": "\u6771\u4eac\u3067\u30c7\u30a3\u30ca\u30fc",
+  "existing_preferences": {
+    "location": "Shinjuku",
+    "cuisine_type": "Izakaya",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '\u6771\u4eac\u3067\u30c7\u30a3\u30ca\u30fc'\nCURRENT PREFERENCES: {\"location\": \"Shinjuku\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Shinjuku\",\n    \"cuisine_type\": \"Izakaya\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Shinjuku",
+    "cuisine_type": "Izakaya",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "location": "Shinjuku",
+    "cuisine_type": "Izakaya",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:50:52.426395",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo conversation content was provided. There is no chat history or user interaction to summarize.\\n\\n#### 2. **Key Points**\\n- No messages were exchanged between the user and the assistant.\\n- No questions, answers, or decisions are present.\\n\\n#### 3. **Topic Timeline**\\nNot applicable, as no topics were discussed.\\n\\n#### 4. **Follow-up Items**\\n- Await actual conversation data to provide a meaningful summary.\\n\\n#### 5. **Context Notes**\\n- The summary template is prepared, but input data (chat history) was empty.\\n\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "No",
+    "last_updated": "2025-05-04T01:50:34.951723"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo conversation content was provided. There is no chat history or user interaction to summarize.\\n\\n#### 2. **Key Points**\\n- No messages were exchanged between the user and the assistant.\\n- No questions, answers, or decisions are present.\\n\\n#### 3. **Topic Timeline**\\nNot applicable, as no topics were discussed.\\n\\n#### 4. **Follow-up Items**\\n- Await actual conversation data to provide a meaningful summary.\\n\\n#### 5. **Context Notes**\\n- The summary template is prepared, but input data (chat history) was empty.\\n\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T01:50:34.951723\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "No",
+    "last_updated": "2025-05-04T01:50:34.951723"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:57:33.469882",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nA user initiated a conversation with the AI assistant, seeking recommendations for sushi restaurants. The assistant responded politely, asking for more details about the user's preferred location. The tone is professional, helpful, and concise. This is an early-stage, information-seeking dialogue with minimal role-play or narrative elements.\\n\\n#### 2. **Key Points**\\n- The user is looking for sushi restaurant recommendations.\\n- No specific location or additional preferences were given in the initial request.\\n- The assistant acknowledged the request and requested clarification on location.\\n- No sushi suggestions or lists were provided yet; the assistant awaits further user input.\\n- The conversation is limited to one question and one reply so far.\\n\\n#### 3. **Topic Timeline**\\n1. User asks for sushi restaurants.\\n2. Assistant requests clarification on the desired area or location.\\n\\n#### 4. **Follow-up Items**\\n- User needs to specify a location or area for the search.\\n- Optionally, user may provide other preferences (e.g., price range, dine-in vs. takeout, ambiance).\\n- The assistant will provide recommendations once details are given.\\n\\n#### 5. **Context Notes**\\n- The conversation is practical and businesslike.\\n- There is no fictional setting or role-play involved.\\n- The user and assistant relationship is typical: user seeks information, assistant provides stepwise guidance.\\n\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T01:57:27.701648"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nA user initiated a conversation with the AI assistant, seeking recommendations for sushi restaurants. The assistant responded politely, asking for more details about the user's preferred location. The tone is professional, helpful, and concise. This is an early-stage, information-seeking dialogue with minimal role-play or narrative elements.\\n\\n#### 2. **Key Points**\\n- The user is looking for sushi restaurant recommendations.\\n- No specific location or additional preferences were given in the initial request.\\n- The assistant acknowledged the request and requested clarification on location.\\n- No sushi suggestions or lists were provided yet; the assistant awaits further user input.\\n- The conversation is limited to one question and one reply so far.\\n\\n#### 3. **Topic Timeline**\\n1. User asks for sushi restaurants.\\n2. Assistant requests clarification on the desired area or location.\\n\\n#### 4. **Follow-up Items**\\n- User needs to specify a location or area for the search.\\n- Optionally, user may provide other preferences (e.g., price range, dine-in vs. takeout, ambiance).\\n- The assistant will provide recommendations once details are given.\\n\\n#### 5. **Context Notes**\\n- The conversation is practical and businesslike.\\n- There is no fictional setting or role-play involved.\\n- The user and assistant relationship is typical: user seeks information, assistant provides stepwise guidance.\\n\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T01:57:27.701648\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T01:57:27.701648"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:58:39.256439",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nThere was no conversation provided between the user and the AI assistant. No messages or chat history were included. As a result, there is no context about participants, subject, or tone.\\n\\n#### 2. **Key Points**\\n- No content to extract key points from, as the chat history is empty.\\n\\n#### 3. **Topic Timeline** (optional)\\n- Not applicable; there were no discussed topics.\\n\\n#### 4. **Follow-up Items**\\n- None, since no conversation occurred.\\n\\n#### 5. **Context Notes**\\n- The absence of chat history means there is no background, fictional context, or relationship to consider.\\n\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "No",
+    "last_updated": "2025-05-04T01:58:36.233291"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nThere was no conversation provided between the user and the AI assistant. No messages or chat history were included. As a result, there is no context about participants, subject, or tone.\\n\\n#### 2. **Key Points**\\n- No content to extract key points from, as the chat history is empty.\\n\\n#### 3. **Topic Timeline** (optional)\\n- Not applicable; there were no discussed topics.\\n\\n#### 4. **Follow-up Items**\\n- None, since no conversation occurred.\\n\\n#### 5. **Context Notes**\\n- The absence of chat history means there is no background, fictional context, or relationship to consider.\\n\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T01:58:36.233291\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "No",
+    "last_updated": "2025-05-04T01:58:36.233291"
+  }
+}
+{
+  "timestamp": "2025-05-04T01:59:08.739854",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n### Chat Summary\\n\\n#### 1. **Overview**\\nThe conversation is between a user seeking sushi restaurant recommendations and an AI assistant. The exchange is straightforward and service-oriented, with the assistant employing a friendly and helpful tone to clarify the user's preferences.\\n\\n#### 2. **Key Points**\\n- The user initiates contact by expressing interest in finding sushi restaurants.\\n- No specific details (location, budget, type of sushi) are provided in the initial query.\\n- The assistant responds by asking for the user's dining budget (affordable, mid-range, premium) to personalize recommendations.\\n- The assistant demonstrates a willingness to tailor suggestions based on additional user input.\\n\\n#### 3. **Topic Timeline**\\n1. The user asks about sushi restaurants.\\n2. The assistant thanks the user and seeks clarification on the user's preferred dining budget.\\n\\n#### 4. **Follow-up Items**\\n- Await the user\u2019s response regarding their budget.\\n- Further clarification may be needed (e.g., location, dine-in vs. takeout, cuisine style).\\n- Provide specific restaurant recommendations once details are supplied.\\n\\n#### 5. **Context Notes**\\n- The interaction is courteous, efficient, and customer-service focused.\\n- The conversation is at the information-gathering stage, pending more specific input from the user to proceed.\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T01:58:36.233291"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n### Chat Summary\\n\\n#### 1. **Overview**\\nThe conversation is between a user seeking sushi restaurant recommendations and an AI assistant. The exchange is straightforward and service-oriented, with the assistant employing a friendly and helpful tone to clarify the user's preferences.\\n\\n#### 2. **Key Points**\\n- The user initiates contact by expressing interest in finding sushi restaurants.\\n- No specific details (location, budget, type of sushi) are provided in the initial query.\\n- The assistant responds by asking for the user's dining budget (affordable, mid-range, premium) to personalize recommendations.\\n- The assistant demonstrates a willingness to tailor suggestions based on additional user input.\\n\\n#### 3. **Topic Timeline**\\n1. The user asks about sushi restaurants.\\n2. The assistant thanks the user and seeks clarification on the user's preferred dining budget.\\n\\n#### 4. **Follow-up Items**\\n- Await the user\u2019s response regarding their budget.\\n- Further clarification may be needed (e.g., location, dine-in vs. takeout, cuisine style).\\n- Provide specific restaurant recommendations once details are supplied.\\n\\n#### 5. **Context Notes**\\n- The interaction is courteous, efficient, and customer-service focused.\\n- The conversation is at the information-gathering stage, pending more specific input from the user to proceed.\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T01:58:36.233291\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T01:58:36.233291"
+  }
+}
+{
+  "timestamp": "2025-05-04T02:02:31.840048",
+  "input_message": "I just want to know about examples of restaurants.",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:02:29.454406"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: 'I just want to know about examples of restaurants.'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T02:02:29.454406\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"\u5bff\u53f8\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:02:29.454406"
+  }
+}
+{
+  "timestamp": "2025-05-04T02:02:33.157235",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n### Chat Summary\\n\\n#### 1. **Overview**\\nThe conversation is between a user interested in restaurant examples and an AI assistant. The exchange is polite, direct, and focused on the user\u2019s request for information. The assistant maintains a helpful and responsive tone, aiming to clarify and move toward actionable recommendations.\\n\\n#### 2. **Key Points**\\n- The user requests examples of restaurants but does not provide details such as type, location, or cuisine.\\n- The AI assistant acknowledges the request and expresses readiness to provide recommendations.\\n- Previous chat context suggests the user's interest may relate to sushi or specific types of restaurants.\\n- The assistant demonstrates an approach that gathers clarification before providing a tailored list.\\n- The conversation remains at the initial inquiry and response stage, awaiting further user input for specificity.\\n\\n#### 3. **Topic Timeline**\\n1. User expresses general interest in restaurant examples.\\n2. Assistant indicates readiness to provide final recommendations, pending any further specifications from the user.\\n\\n#### 4. **Follow-up Items**\\n- User should clarify preferences (e.g., location, cuisine, type of restaurant).\\n- Assistant to provide a specific list of recommended restaurants once preferences are supplied.\\n- Consider broader recommendations for different styles or cuisines if the user remains open-ended.\\n\\n#### 5. **Context Notes**\\n- The exchange is informational and efficient, with a focus on customer service.\\n- No role-play or fictional themes are present\u2014tone is neutral and professional.\\n- The interaction is brief and at an early stage of needs assessment.\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:02:29.454406"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n### Chat Summary\\n\\n#### 1. **Overview**\\nThe conversation is between a user interested in restaurant examples and an AI assistant. The exchange is polite, direct, and focused on the user\u2019s request for information. The assistant maintains a helpful and responsive tone, aiming to clarify and move toward actionable recommendations.\\n\\n#### 2. **Key Points**\\n- The user requests examples of restaurants but does not provide details such as type, location, or cuisine.\\n- The AI assistant acknowledges the request and expresses readiness to provide recommendations.\\n- Previous chat context suggests the user's interest may relate to sushi or specific types of restaurants.\\n- The assistant demonstrates an approach that gathers clarification before providing a tailored list.\\n- The conversation remains at the initial inquiry and response stage, awaiting further user input for specificity.\\n\\n#### 3. **Topic Timeline**\\n1. User expresses general interest in restaurant examples.\\n2. Assistant indicates readiness to provide final recommendations, pending any further specifications from the user.\\n\\n#### 4. **Follow-up Items**\\n- User should clarify preferences (e.g., location, cuisine, type of restaurant).\\n- Assistant to provide a specific list of recommended restaurants once preferences are supplied.\\n- Consider broader recommendations for different styles or cuisines if the user remains open-ended.\\n\\n#### 5. **Context Notes**\\n- The exchange is informational and efficient, with a focus on customer service.\\n- No role-play or fictional themes are present\u2014tone is neutral and professional.\\n- The interaction is brief and at an early stage of needs assessment.\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": \"Medium\", \"location\": \"Meguro\", \"travel_time\": null, \"party_size\": \"2\", \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": \"Yes\", \"last_updated\": \"2025-05-04T02:02:29.454406\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:02:29.454406"
+  }
+}
+{
+  "timestamp": "2025-05-04T02:03:55.361415",
+  "input_message": "I just want to know about examples of restaurants.",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:03:32.843955"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: 'I just want to know about examples of restaurants.'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": null, \"location\": null, \"travel_time\": null, \"party_size\": null, \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": null, \"last_updated\": \"2025-05-04T02:03:32.843955\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:03:32.843955"
+  }
+}
+{
+  "timestamp": "2025-05-04T02:03:56.223656",
+  "input_message": "[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo chat history or conversation exchanges were provided. There have been no interactions recorded between the user and the assistant.\\n\\n#### 2. **Key Points**\\n- No messages or dialogue to summarize.\\n- No information, requests, or responses were exchanged.\\n\\n#### 3. **Topic Timeline** (optional)\\n- Not applicable, as no conversation took place.\\n\\n#### 4. **Follow-up Items**\\n- Await user input to initiate a conversation.\\n\\n#### 5. **Context Notes**\\n- The chat history, last 7 exchanges, and last conversation are all empty. No context is available regarding the setting, roles, or tone.\\n\\n---\"\n  }\n]",
+  "existing_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:03:32.843955"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nUSER MESSAGE: '[\n  {\n    \"role\": \"developer\",\n    \"content\": \"---\\n\\n### Chat Summary\\n\\n#### 1. **Overview**\\nNo chat history or conversation exchanges were provided. There have been no interactions recorded between the user and the assistant.\\n\\n#### 2. **Key Points**\\n- No messages or dialogue to summarize.\\n- No information, requests, or responses were exchanged.\\n\\n#### 3. **Topic Timeline** (optional)\\n- Not applicable, as no conversation took place.\\n\\n#### 4. **Follow-up Items**\\n- Await user input to initiate a conversation.\\n\\n#### 5. **Context Notes**\\n- The chat history, last 7 exchanges, and last conversation are all empty. No context is available regarding the setting, roles, or tone.\\n\\n---\"\n  }\n]'\nCURRENT PREFERENCES: {\"cuisine_type\": \"\\u5bff\\u53f8\", \"budget_level\": \"Medium\", \"location\": \"Meguro\", \"travel_time\": null, \"party_size\": \"2\", \"seating_preference\": null, \"dietary_restrictions\": [], \"occasion\": null, \"english_menu_needed\": \"Yes\", \"last_updated\": \"2025-05-04T02:03:32.843955\"}\n\nPREDICTION GUIDELINES:\n- Analyze the context carefully\n- Provide specific, actionable preferences\n- Default to Meguro area if no location specified\n- Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (Meguro preferred)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT:\n- MUST respond ONLY with a valid JSON object\n- Use sensible defaults if unable to confidently predict\n- Focus on Meguro area dining preferences",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Sushi\",\n    \"budget_level\": \"Medium\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Sushi",
+    "budget_level": "Medium",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "\u5bff\u53f8",
+    "budget_level": "Medium",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:03:32.843955"
+  }
+}
+{
+  "timestamp": "2025-05-04T02:06:44.477207",
+  "input_message": "I just want to know about examples of restaurants.",
+  "existing_preferences": {
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:06:42.294681"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nCONTEXT:\n- Current cuisine preference: None\n- Current location preference: None\n\nUSER MESSAGE: 'I just want to know about examples of restaurants.'\n\nPREDICTION GUIDELINES:\n1. If user message is vague or empty, use context and defaults\n2. Extract specific preferences from the message\n3. Prioritize existing preferences\n4. Use Meguro as default location for Tokyo dining\n5. Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (default: Meguro)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT RULES:\n- Respond ONLY with a valid JSON object\n- If unsure, use sensible defaults\n- Focus on creating a helpful restaurant recommendation",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Kaiseki\",\n    \"budget_level\": \"High\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"Yes\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "Yes"
+  },
+  "final_preferences": {
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:06:42.294681"
+  }
+}
+{
+  "timestamp": "2025-05-04T02:06:45.484001",
+  "input_message": "[]",
+  "existing_preferences": {
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:06:42.294681"
+  },
+  "prediction_attempt": "success",
+  "error": null,
+  "environment": {
+    "openai_key_exists": true,
+    "python_version": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "async_openai_version": "unknown"
+  },
+  "prompt": "TASK: Predict restaurant search preferences for Tokyo dining as a JSON object.\n\nCONTEXT:\n- Current cuisine preference: Kaiseki\n- Current location preference: Meguro\n\nUSER MESSAGE: '[]'\n\nPREDICTION GUIDELINES:\n1. If user message is vague or empty, use context and defaults\n2. Extract specific preferences from the message\n3. Prioritize existing preferences\n4. Use Meguro as default location for Tokyo dining\n5. Suggest authentic Japanese dining experiences\n\nREQUIRED JSON RESPONSE FORMAT:\n{\n    \"location\": \"Specific Tokyo area (default: Meguro)\",\n    \"cuisine_type\": \"Specific Japanese cuisine style\",\n    \"budget_level\": \"Low/Medium/High\",\n    \"party_size\": \"Number of people\",\n    \"english_menu_needed\": \"Yes/No\"\n}\n\nIMPORTANT RULES:\n- Respond ONLY with a valid JSON object\n- If unsure, use sensible defaults\n- Focus on creating a helpful restaurant recommendation",
+  "raw_prediction": "{\n    \"location\": \"Meguro\",\n    \"cuisine_type\": \"Kaiseki\",\n    \"budget_level\": \"High\",\n    \"party_size\": \"2\",\n    \"english_menu_needed\": \"No\"\n}",
+  "parsed_prediction": {
+    "location": "Meguro",
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "party_size": "2",
+    "english_menu_needed": "No"
+  },
+  "final_preferences": {
+    "cuisine_type": "Kaiseki",
+    "budget_level": "High",
+    "location": "Meguro",
+    "travel_time": null,
+    "party_size": "2",
+    "seating_preference": null,
+    "dietary_restrictions": [],
+    "occasion": null,
+    "english_menu_needed": "Yes",
+    "last_updated": "2025-05-04T02:06:42.294681"
+  }
+}
