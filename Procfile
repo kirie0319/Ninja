@@ -1,1 +1,1 @@
-web: gunicorn -k uvicorn.workers.UvicornWorker wsgi:app -c gunicorn.conf.py
+web: uvicorn wsgi:app --host=0.0.0.0 --port=5000
