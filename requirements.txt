@@ -32,3 +32,6 @@ pytest
 psycopg2-binary
 pinecone
 langchain
+langchain_openai
+langchain_core
+langchain_community
