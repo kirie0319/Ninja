@@ -1,0 +1,1 @@
+web: gunicorn -k uvicorn.workers.UvicornWorker wsgi:app -c gunicorn.conf.py
