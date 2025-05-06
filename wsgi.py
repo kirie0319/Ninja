@@ -518,6 +518,10 @@ class MessageRequest(BaseModel):
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return Response(status_code=204)
+
 @app.post("/api/chat")
 async def process_message(message_request: MessageRequest, session_id: Optional[str] = Cookie(None)):
     body = message_request.message
