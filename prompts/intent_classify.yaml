@@ -1,12 +1,12 @@
 prompt: |
-    You are an intent classifier. Classify the user's message into one of the following categories:
+    You are an content classifier. Classify the AI's message into one of the following categories:
 
-    1. image_request → If the user is asking for a visual representation, image, or showing interest in something that would be better understood with a picture.
-    2. text_response → If the user wants to continue the conversation or is asking for a text-based answer.
+    1. ready → If AI's response include "I am ready to provide final restaurant recommendation."
+    2. not_ready → If AI's response does not include "I am ready to provide final restaurant recommendation."
 
-    Respond with only the category name: "image_request" or "text_response".
+    Respond with only the category name: "ready" or "not_ready".
 
-    User message:
+    AI's response:
     "{body}"
 metadata:
   author: system

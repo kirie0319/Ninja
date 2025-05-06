@@ -299,6 +299,8 @@
     <script>
         // Base URL for API requests - update this to match your FastAPI server
         const API_BASE_URL = 'http://localhost:8000';
+        const RESTAURANT_SEARCH_URL = '/api/restaurants/search';
+        const RESTAURANT_DETAIL_URL = '/api/restaurants/detail';
         
         // Elements
         const keywordInput = document.getElementById('keyword');
@@ -369,27 +371,31 @@
             
             if (!keyword && !area) {
                 hideLoading();
-                showError('Please enter a keyword or select an area.');
+                showError('キーワードまたはエリアを入力してください。');
                 return;
             }
             
             try {
-                const queryParams = new URLSearchParams();
-                if (keyword) queryParams.append('keyword', keyword);
-                if (area) queryParams.append('area', area);
-                queryParams.append('count', count);
-                
-                const response = await fetch(`${API_BASE_URL}/api/restaurants/search?${queryParams}`);
+                const response = await fetch(`${API_BASE_URL}/api/restaurants/ai-search`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        query: `${area ? area + 'の' : ''}${keyword}`,
+                        max_results: parseInt(count)
+                    })
+                });
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 
                 const data = await response.json();
-                displayResults(data);
+                displayAIResults(data);
             } catch (error) {
                 console.error('Error searching restaurants:', error);
-                showError('Failed to fetch restaurant data. Please try again.');
+                showError('レストランデータの取得に失敗しました。もう一度お試しください。');
             } finally {
                 hideLoading();
             }
@@ -487,54 +493,33 @@
                 card.innerHTML = `
                     <div class="restaurant-image">
                         <img src="${imageUrl}" alt="${restaurant.name}">
-                    </div>
-                    <div class="restaurant-details">
-                        <h3 class="restaurant-name">${restaurant.name}</h3>
-                        
-                        <div class="restaurant-info">
-                            <strong>Genre:</strong> ${restaurant.genre ? restaurant.genre.name : 'N/A'}
-                        </div>
-                        
-                        <div class="restaurant-info">
-                            <strong>Address:</strong> ${restaurant.address}
-                        </div>
-                        
-                        ${restaurant.access ? `
-                        <div class="restaurant-info">
-                            <strong>Access:</strong> ${restaurant.access}
-                        </div>
-                        ` : ''}
-                        
-                        ${restaurant.budget && restaurant.budget.name ? `
-                        <div class="restaurant-info">
-                            <strong>Budget:</strong> ${restaurant.budget.name}
-                        </div>
-                        ` : ''}
-                        
-                        ${restaurant.open ? `
-                        <div class="restaurant-info">
-                            <strong>Open Hours:</strong> ${restaurant.open}
-                        </div>
-                        ` : ''}
-                        
-                        <a href="${restaurant.urls.pc}" target="_blank" class="restaurant-link">View on Hotpepper →</a>
-                    </div>
-                `;
-                
-                restaurantList.appendChild(card);
             });
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
         
-        // Helper functions for UI
-        function showLoading() {
-            loadingElement.style.display = 'block';
-        }
-        
-        function hideLoading() {
-            loadingElement.style.display = 'none';
-        }
-        
-        function showError(message) {
+        const data = await response.json();
+        displayAIResults(data);
+    } catch (error) {
+        console.error('Error searching restaurants:', error);
+        showError('レストランデータの取得に失敗しました。もう一度お試しください。');
+    } finally {
+        hideLoading();
+    }
+}
+
+// Helper functions for UI
+function showLoading() {
+    loadingElement.style.display = 'block';
+}
+
+function hideLoading() {
+    loadingElement.style.display = 'none';
+}
+
+function showError(message) {
             errorMessageElement.textContent = message;
             errorMessageElement.style.display = 'block';
         }

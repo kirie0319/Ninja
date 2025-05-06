@@ -1,0 +1,525 @@
+{
+  "scenario": {
+    "profile": "Foreign Tourist in Meguro",
+    "preferences": {
+      "budget": "¥5,0000-10,0000",
+      "language": "English support required",
+      "cuisine": "Sushi (primary) + Japanese options",
+      "atmosphere": "Traditional or modern Japanese",
+      "group_size": "1-4 people",
+      "special_preferences": [
+        "Counter seating to watch chef",
+        "Authentic experience",
+        "Photography-friendly"
+      ]
+    },
+    "constraints": [
+      "Language barrier",
+      "Unfamiliar with Japanese customs",
+      "Limited time in Tokyo"
+    ]
+  },
+  "generated_queries": [
+    {
+      "query": "目黒で英語メニューがある寿司カウンターを探しています。予算は5万円です。",
+      "language": "ja",
+      "expected_focus": "目黒、寿司、英語メニュー、カウンター席、予算",
+      "difficulty": "easy"
+    },
+    {
+      "query": "Looking for a sushi restaurant in Meguro with English-speaking staff and a counter seat. Budget up to 50,000 yen.",
+      "language": "en",
+      "expected_focus": "Meguro, sushi, English-speaking staff, counter seat, budget",
+      "difficulty": "easy"
+    },
+    {
+      "query": "伝統的な雰囲気のある目黒の寿司店で、2人でカウンター席に座りたい。英語対応できるお店を教えてください。",
+      "language": "ja",
+      "expected_focus": "伝統的な雰囲気、寿司、目黒、2人、カウンター席、英語対応",
+      "difficulty": "medium"
+    },
+    {
+      "query": "Any contemporary Japanese sushi places in Meguro for a solo diner, with English menu and a sushi chef counter experience?",
+      "language": "en",
+      "expected_focus": "contemporary atmosphere, sushi, Meguro, solo diner, English menu, chef counter",
+      "difficulty": "medium"
+    },
+    {
+      "query": "英語スタッフがいる目黒のモダンな寿司レストランで、3人で板前さんの前に座れる場所を探しています。予算は5万円以内です。",
+      "language": "ja",
+      "expected_focus": "英語スタッフ、モダンな寿司、目黒、3人、カウンター席、予算",
+      "difficulty": "hard"
+    },
+    {
+      "query": "Find me a traditional sushi restaurant in Meguro for 4 people, where we can sit at the counter and interact with the chef. Need English support.",
+      "language": "en",
+      "expected_focus": "traditional sushi, Meguro, 4 people, counter, chef interaction, English support",
+      "difficulty": "hard"
+    },
+    {
+      "query": "目黒で英語メニューがあり、1人でも入りやすい静かな寿司屋を探しています。カウンター席希望です。",
+      "language": "ja",
+      "expected_focus": "目黒、英語メニュー、一人、静か、寿司、カウンター席",
+      "difficulty": "medium"
+    },
+    {
+      "query": "Are there any sushi restaurants in Meguro with both English menus and English-speaking staff, suitable for a small group and a modern Japanese vibe?",
+      "language": "en",
+      "expected_focus": "sushi, Meguro, English menus and staff, small group, modern Japanese atmosphere",
+      "difficulty": "medium"
+    }
+  ],
+  "test_results": [
+    {
+      "query": "目黒で英語メニューがある寿司カウンターを探しています。予算は5万円です。",
+      "query_metadata": {
+        "query": "目黒で英語メニューがある寿司カウンターを探しています。予算は5万円です。",
+        "language": "ja",
+        "expected_focus": "目黒、寿司、英語メニュー、カウンター席、予算",
+        "difficulty": "easy"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 5,
+        "proper_budget_match": 3,
+        "tourist_friendly_features": {
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 活": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 居酒屋 たつみや": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 HIDARIUMA": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "釣船茶屋 ざうお目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "SETOUCHI　檸檬食堂　目黒店": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "バル マルシェ コダマ 目黒 STEAK&LOBSTER": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "花見鮨": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ]
+        }
+      },
+      "final_response": "1. 釣船茶屋 ざうお目黒店、目黒、居酒屋、3001～4000円\n   - 釣った魚をすぐ食べられるお店で、新鮮な海の幸を楽しめます。\n   - 英語対応あり、Wi-Fiあり\n   - アクセス: ＪＲ 目黒駅・東急目黒線目黒駅　徒歩2分\n\n2. バル マルシェ コダマ 目黒 STEAK&LOBSTER、目黒、ダイニングバー・バル、4001～5000円\n   - 厳選した肉を使用した料理が楽しめるお店で、満足感を得られます。\n   - 個室あり、英語対応あり、Wi-Fiあり\n   - アクセス: 都営三田線，東急目黒線，東京メトロ南北線，JR目黒駅正面口より徒歩約2分\n\n3. sibafu、目黒、ダイニングバー・バル、3001～4000円\n   - 落ち着いた雰囲気でデートや女子会におすすめのお店です。\n   - 英語対応あり\n   - アクセス: JR山手線目黒駅徒歩４分",
+      "status": "success"
+    },
+    {
+      "query": "Looking for a sushi restaurant in Meguro with English-speaking staff and a counter seat. Budget up to 50,000 yen.",
+      "query_metadata": {
+        "query": "Looking for a sushi restaurant in Meguro with English-speaking staff and a counter seat. Budget up to 50,000 yen.",
+        "language": "en",
+        "expected_focus": "Meguro, sushi, English-speaking staff, counter seat, budget",
+        "difficulty": "easy"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 4,
+        "proper_budget_match": 1,
+        "tourist_friendly_features": {
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "GASSE ガッセ": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "Bar Day Break tokyo バーデイブレイクトウキョウ": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "向三軒両隣": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目利きの銀次 目黒東口駅前店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "ゆう月": [
+            "Non-Smoking"
+          ],
+          "LUXURY BAR LIP りっぷ 恵比寿": [
+            "Wi-Fi",
+            "Credit Card"
+          ]
+        }
+      },
+      "final_response": "どのエリアのレストランを探していますか？東京の主要エリア（新宿、渋谷、銀座など）を指定してください。",
+      "status": "success"
+    },
+    {
+      "query": "伝統的な雰囲気のある目黒の寿司店で、2人でカウンター席に座りたい。英語対応できるお店を教えてください。",
+      "query_metadata": {
+        "query": "伝統的な雰囲気のある目黒の寿司店で、2人でカウンター席に座りたい。英語対応できるお店を教えてください。",
+        "language": "ja",
+        "expected_focus": "伝統的な雰囲気、寿司、目黒、2人、カウンター席、英語対応",
+        "difficulty": "medium"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 5,
+        "proper_budget_match": 2,
+        "tourist_friendly_features": {
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 居酒屋 たつみや": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "釣船茶屋 ざうお目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "北海道 目黒西口店": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "向三軒両隣": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "酒場シナトラ 目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "KITCHEN BAR 新目黒茶屋": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "ターリー屋 目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ]
+        }
+      },
+      "final_response": "1. 釣船茶屋 ざうお目黒店、目黒、居酒屋、3001～4000円\n   - 釣った魚をすぐ食べられるお店で、伝統的な雰囲気を楽しめます。\n   - 英語対応あり、Wi-Fi完備\n   - JR目黒駅・東急目黒線目黒駅から徒歩2分\n\n2. 酒場シナトラ 目黒店、目黒、居酒屋、3001～4000円\n   - お洒落な雰囲気の大衆酒場で、様々な場面で利用できます。\n   - 英語対応あり、Wi-Fi完備\n   - 目黒駅西口から徒歩1分\n\n3. KITCHEN BAR 新目黒茶屋、目黒、イタリアン・フレンチ、3001～4000円\n   - 東京都感染防止徹底宣言に対応した異空間で、西陣織が彩る雰囲気が特徴的です。\n   - 英語対応あり、Wi-Fi完備\n   - JR山手線目黒駅徒歩5分/都営地下鉄三田線・東急目黒線・東京メトロ南北線目黒駅徒歩5分",
+      "status": "success"
+    },
+    {
+      "query": "Any contemporary Japanese sushi places in Meguro for a solo diner, with English menu and a sushi chef counter experience?",
+      "query_metadata": {
+        "query": "Any contemporary Japanese sushi places in Meguro for a solo diner, with English menu and a sushi chef counter experience?",
+        "language": "en",
+        "expected_focus": "contemporary atmosphere, sushi, Meguro, solo diner, English menu, chef counter",
+        "difficulty": "medium"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 5,
+        "proper_budget_match": 2,
+        "tourist_friendly_features": {
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "ONE THE DINER": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "向三軒両隣": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "TOKYO DREAM トウキョウドリーム 目黒駅前店": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "Bar Day Break tokyo バーデイブレイクトウキョウ": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "ASIAN DINING LUON LUON アジアンダイニングルーンルーン": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "17CAFE&BAR": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "紫仙庵": [
+            "Non-Smoking"
+          ]
+        }
+      },
+      "final_response": "どのエリアのレストランを探していますか？東京の主要エリア（新宿、渋谷、銀座など）を指定してください。",
+      "status": "success"
+    },
+    {
+      "query": "英語スタッフがいる目黒のモダンな寿司レストランで、3人で板前さんの前に座れる場所を探しています。予算は5万円以内です。",
+      "query_metadata": {
+        "query": "英語スタッフがいる目黒のモダンな寿司レストランで、3人で板前さんの前に座れる場所を探しています。予算は5万円以内です。",
+        "language": "ja",
+        "expected_focus": "英語スタッフ、モダンな寿司、目黒、3人、カウンター席、予算",
+        "difficulty": "hard"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 5,
+        "proper_budget_match": 3,
+        "tourist_friendly_features": {
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "バル マルシェ コダマ 目黒 STEAK&LOBSTER": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "向三軒両隣": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 HIDARIUMA": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "釣船茶屋 ざうお目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 居酒屋 たつみや": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "板前がいる町の酒場 庄や 目黒408店": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "SETOUCHI　檸檬食堂　目黒店": [
+            "Credit Card",
+            "Non-Smoking"
+          ]
+        }
+      },
+      "final_response": "1. 板前がいる町の酒場 庄や 目黒408店\n   - エリア: 目黒 (目黒駅)\n   - ジャンル: 居酒屋\n   - 予算: 2001～3000円 (2600円(通常平均)/4000円(宴会平均))\n   - おすすめの理由: 新鮮な刺身が自慢で、宴会コースも豊富に用意されています。\n   - 特筆すべき設備やサービス: 6・8・20名様向けの個室があり、英語対応も可能です。\n   - アクセス方法: 目黒駅西口徒歩2分\n\n2. バル マルシェ コダマ 目黒 STEAK&LOBSTER\n   - エリア: 目黒 (目黒駅)\n   - ジャンル: ダイニングバー・バル\n   - 予算: 4001～5000円 (ランチ1500円～/ディナー4000円～)\n   - おすすめの理由: 厳選した肉を使用した料理で満足感を提供しています。\n   - 特筆すべき設備やサービス: 4名様～20名様まで利用可能な個室席があり、英語対応も可能です。\n   - アクセス方法: 都営三田線，東急目黒線，東京メトロ南北線，JR目黒駅正面口より徒歩約2分\n\n3. 釣船茶屋 ざうお目黒店\n   - エリア: 目黒 (目黒駅)\n   - ジャンル: 居酒屋\n   - 予算: 3001～4000円 (通常平均4000円/宴会平均5000円/ランチ平均1000円)\n   - おすすめの理由: 釣った魚をすぐ食べられる店で、各種宴会の予約も受け付けています。\n   - 特筆すべき設備やサービス: 英語対応があり、Wi-Fiも利用可能です。\n   - アクセス方法: JR 目黒駅・東急目黒線目黒駅　徒歩2分",
+      "status": "success"
+    },
+    {
+      "query": "Find me a traditional sushi restaurant in Meguro for 4 people, where we can sit at the counter and interact with the chef. Need English support.",
+      "query_metadata": {
+        "query": "Find me a traditional sushi restaurant in Meguro for 4 people, where we can sit at the counter and interact with the chef. Need English support.",
+        "language": "en",
+        "expected_focus": "traditional sushi, Meguro, 4 people, counter, chef interaction, English support",
+        "difficulty": "hard"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 3,
+        "proper_budget_match": 1,
+        "tourist_friendly_features": {
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "向三軒両隣": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "CHUM APARTMENT チャムアパートメント": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "4 よん": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "GASSE ガッセ": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "酒場シナトラ 目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "釣船茶屋 ざうお目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "紫仙庵": [
+            "Non-Smoking"
+          ]
+        }
+      },
+      "final_response": "どのエリアのレストランを探していますか？東京の主要エリア（新宿、渋谷、銀座など）を指定してください。",
+      "status": "success"
+    },
+    {
+      "query": "目黒で英語メニューがあり、1人でも入りやすい静かな寿司屋を探しています。カウンター席希望です。",
+      "query_metadata": {
+        "query": "目黒で英語メニューがあり、1人でも入りやすい静かな寿司屋を探しています。カウンター席希望です。",
+        "language": "ja",
+        "expected_focus": "目黒、英語メニュー、一人、静か、寿司、カウンター席",
+        "difficulty": "medium"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 5,
+        "proper_budget_match": 2,
+        "tourist_friendly_features": {
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 居酒屋 たつみや": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "釣船茶屋 ざうお目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "北海道 目黒西口店": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "KITCHEN BAR 新目黒茶屋": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目利きの銀次 目黒東口駅前店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 活": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "目黒 HIDARIUMA": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ]
+        }
+      },
+      "final_response": "1. 釣船茶屋 ざうお目黒店、目黒、居酒屋、3001～4000円\n   - 魚を釣ってすぐ食べられる楽しい体験ができます。\n   - 英語対応あり、Wi-Fi完備\n   - JR目黒駅・東急目黒線目黒駅から徒歩2分\n\n2. 目利きの銀次 目黒東口駅前店、目黒、居酒屋、2001～3000円\n   - お得な飲み放題プランがあり、魚介を卓上で焼くことができます。\n   - 英語対応あり、Wi-Fi完備\n   - JR目黒駅東口から徒歩でアクセス可能\n\n3. 北海道 目黒西口店、目黒、居酒屋、3001～4000円\n   - 北海道料理を楽しめるおすすめコースがあります。\n   - 個室完備、英語非対応、Wi-Fiなし\n   - JR各線目黒駅西口から徒歩1分（山手線・東急目黒線・都営三田線・南北線）",
+      "status": "success"
+    },
+    {
+      "query": "Are there any sushi restaurants in Meguro with both English menus and English-speaking staff, suitable for a small group and a modern Japanese vibe?",
+      "query_metadata": {
+        "query": "Are there any sushi restaurants in Meguro with both English menus and English-speaking staff, suitable for a small group and a modern Japanese vibe?",
+        "language": "en",
+        "expected_focus": "sushi, Meguro, English menus and staff, small group, modern Japanese atmosphere",
+        "difficulty": "medium"
+      },
+      "raw_results_count": 10,
+      "tourist_analysis": {
+        "english_support_count": 4,
+        "proper_budget_match": 2,
+        "tourist_friendly_features": {
+          "sibafu": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "居酒屋 魚魚権 ととげん 目黒": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "酒場シナトラ 目黒店": [
+            "Wi-Fi",
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "向三軒両隣": [
+            "Credit Card",
+            "Non-Smoking"
+          ],
+          "GASSE ガッセ": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "TOKYO DREAM トウキョウドリーム 目黒駅前店": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "Bar Day Break tokyo バーデイブレイクトウキョウ": [
+            "Wi-Fi",
+            "Credit Card"
+          ],
+          "目黒 居酒屋 たつみや": [
+            "Wi-Fi",
+            "Credit Card"
+          ]
+        }
+      },
+      "final_response": "どのエリアのレストランを探していますか？東京の主要エリア（新宿、渋谷、銀座など）を指定してください。",
+      "status": "success"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 from operator import index
 import os
 from pydoc import text
-from unittest import result
+from unittest import result 
 from pinecone import Pinecone, ServerlessSpec
 from openai import OpenAI
 from dotenv import load_dotenv

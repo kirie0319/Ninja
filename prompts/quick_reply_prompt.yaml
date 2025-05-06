@@ -19,6 +19,7 @@ prompt: |
     会話の要約: {summary}
     ユーザーの前のメッセージ: {user_body}
     アシスタントのユーザーへの質問: {assistant_body}
+    
 metadata:
   author: system
   description: Prompt for NinjaAI restaurant service

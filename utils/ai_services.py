@@ -14,7 +14,7 @@ class AIService:
         self.openai_client = AsyncOpenAI(
             api_key=os.getenv("OPENAI_API_KEY")
         )
-        self.openai_default_model = "gpt-4o"
+        self.openai_default_model = "gpt-4.1"
 
         self.anthropic_client = AsyncAnthropic(
             api_key=os.getenv("ANTHROPIC_API_KEY")
@@ -24,7 +24,7 @@ class AIService:
             base_url="https://openrouter.ai/api/v1",
             api_key=os.getenv("OPENROUTER_API_KEY")
         )
-        self.openrouter_default_model = "openai/gpt-4o"
+        self.openrouter_default_model = "openai/gpt-4.1"
 
         self.summarize_prompt = None
         self.intent_prompt = None
@@ -77,7 +77,7 @@ class AIService:
                 model=self.openrouter_default_model,
                 messages=[
                     {
-                        "role": "user",
+                        "role": "assistant",
                         "content": prompt_text
                     }
                 ]
@@ -87,13 +87,19 @@ class AIService:
             print(f"Error summarizing conversation: {e}")
             return "Failed to summarize conversation."
 
-    async def openrouter_generate_response(self, user_message: str, summary: list, user_history: list, last_two: list) -> str:
+    async def openrouter_generate_response(self, user_message: str, summary: list, user_history: list, last_two: list, user_preferences: list) -> str:
         if not self.restaurant_prompt:
             await self.initialize_prompt()
-        prompt_text = self.restaurant_prompt["prompt"].format(
+        
+        # Handle empty or None user_preferences
+        if not user_preferences:
+            user_preferences = '{}'  # Default to an empty JSON object
+        
+        prompt_text = self.restaurant_prompt['prompt'].format(
             summary_json=summary,
             user_history_json=user_history,
-            last_two_json=last_two
+            last_two_json=last_two,
+            user_preferences_json=user_preferences
         )
         print(prompt_text)
         try:
@@ -102,6 +108,10 @@ class AIService:
                 messages=[
                     {
                         "role": "user",
+                        "content": user_message
+                    },
+                    {
+                        "role": "assistant",
                         "content": prompt_text
                     }
                 ]
